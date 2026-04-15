@@ -1,4 +1,7 @@
-console.log("Hello world!");
+import { renderLandingPage } from "./landingPage.js";
+
+
+renderLandingPage();
 
 function initNav(barId, linksId, containerId) {
   const bar = document.getElementById(barId);

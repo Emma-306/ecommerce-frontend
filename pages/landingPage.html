@@ -205,8 +205,30 @@
         <button class="px-8 py-3 bg-theme text-white rounded">View All Products</button>
       </div>
     </div>
-    <div class="px-14 xl:px-36 flex flex-col bg-red-500 h-80 w-full">
-
+    <div class="px-14 xl:px-36 flex flex-col h-80 w-full gap-4">
+      <div class="flex flex-row gap-4 items-center justify-start">
+        <div class="bg-theme h-9 w-5 rounded-sm"></div>
+        <span class="text-theme font-semibold text-base">Categories</span>
+      </div>
+      <div class="flex flex-row items-end mb-4 relative justify-start w-full">
+        <div class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4">
+          <span
+            class="text-black font-semibold text-4xl mr-10 md:mr-20 whitespace-nowrap"
+            >Browse By Category</span
+          >
+        </div>
+        <div class="flex flex-row items-center justify-center gap-2 absolute right-4  lg:right-0 -top-14 md:top-0">
+          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
+            <i class="fa-solid fa-arrow-left" style="color: rgb(11, 11, 11);"></i>
+          </div>
+          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
+            <i class="fa-solid fa-arrow-right" style="color: rgb(11, 11, 11);"></i>
+          </div>
+        </div>
+      </div>
+      <div class="w-full h-[145px] rounded-lg grid grid-cols-6 gap-4" id="categories-container">
+        
+      </div>
     </div>
     <script src="../js/main.js" type="module"></script>
   </body>

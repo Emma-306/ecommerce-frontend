@@ -1,5 +1,6 @@
-import { flashSalesProducts } from "./data.js";
+import { flashSalesProducts,categories } from "./data.js";
 const flashSalesImages = document.getElementById("flash-sales-images");
+const categoriesContainer = document.getElementById("categories-container");
 
 export function renderLandingPage() {
   flashSalesProducts.forEach((item) => {
@@ -10,12 +11,14 @@ export function renderLandingPage() {
               <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
                 <i 
                   class="fa-regular fa-heart text-black cursor-pointer"
-                  data-liked="false">
+                  data-type="like"
+                  data-liked="${item.liked}" data-id="${item.id}">
                 </i>
               </div>
               <div class="absolute right-2 top-12 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
                 <i class="fa-regular fa-eye text-black"
-                data-watched="false">
+                data-type="watch"
+                data-watched="${item.watched}" data-id="${item.id}">
                 </i>
               </div>
               <div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>
@@ -34,26 +37,38 @@ export function renderLandingPage() {
     `;
   });
   flashSalesImages.addEventListener("click", (e) => {
-    if (e.target.classList.contains("fa-heart")) {
+    const icon = e.target.closest("i");
+    if (!icon) return;
 
-    const heart = e.target;
+    const id = Number(icon.dataset.id);
+    const product = flashSalesProducts.find(p => p.id === id);
+    if (!product) return;
 
-    heart.classList.toggle("fa-regular");
-    heart.classList.toggle("fa-solid");
+    const type = icon.dataset.type;
 
-    heart.classList.toggle("text-theme");
+    if (type === "like") {
+      product.liked = !product.liked;
 
-    heart.dataset.liked = heart.dataset.liked === "false" ? "true" : "false";
-  } if (e.target.classList.contains("fa-eye")) {
+      icon.classList.toggle("fa-regular");
+      icon.classList.toggle("fa-solid");
+      icon.classList.toggle("text-theme");
+    }
 
-    const eye = e.target;
+    if (type === "watch") {
+      product.watched = !product.watched;
 
-    eye.classList.toggle("fa-regular");
-    eye.classList.toggle("fa-solid");
-
-    eye.classList.toggle("text-theme");
-
-    eye.dataset.watched = eye.dataset.watched === "false" ? "true" : "false";
-  }
+      icon.classList.toggle("fa-eye");
+      icon.classList.toggle("fa-eye-slash");
+    }
+  });
+  categories.forEach((category)=>{
+    categoriesContainer.innerHTML += `
+      <div class="h-full w-[182px] border border-gray-200 ">
+         <div class="flex flex-col items-center justify-center h-full">
+            <img class="h-14 w-14 object-cover mb-2" src=${category.image} alt="">
+            <span>${category.name}</span>
+         </div>
+      </div>
+    `
   });
 }

@@ -5,7 +5,9 @@ export const flashSalesProducts = [
     price: 120,
     discount: 40,
     image: "../Images/flash-sales/product-1.png",
-    ratingImage: "../Images/ratings/rating-4.5.png"
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
   },
   {
     id: 2,
@@ -13,7 +15,9 @@ export const flashSalesProducts = [
     price: 960,
     discount: 35,
     image: "../Images/flash-sales/product-2.png",
-    ratingImage: "../Images/ratings/rating-4.png"
+    ratingImage: "../Images/ratings/rating-4.png",
+    liked: false,
+    watched: false
   },
   {
     id: 3,
@@ -21,7 +25,9 @@ export const flashSalesProducts = [
     price: 370,
     discount: 30,
     image: "../Images/flash-sales/product-3.png",
-    ratingImage: "../Images/ratings/rating-5.png"
+    ratingImage: "../Images/ratings/rating-5.png",
+    liked: false,
+    watched: false
   },
   {
     id: 4,
@@ -29,7 +35,9 @@ export const flashSalesProducts = [
     price: 375,
     discount: 25,
     image: "../Images/flash-sales/product-4.png",
-    ratingImage: "../Images/ratings/rating-4.5.png"
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
   },
   {
     id: 5,
@@ -37,7 +45,9 @@ export const flashSalesProducts = [
     price: 250,
     discount: 20,
     image: "../Images/flash-sales/product-1.png",
-    ratingImage: "../Images/ratings/rating-4.png"
+    ratingImage: "../Images/ratings/rating-4.png",
+    liked: false,
+    watched: false
   },
   {
     id: 6,
@@ -45,7 +55,9 @@ export const flashSalesProducts = [
     price: 499,
     discount: 15,
     image: "../Images/flash-sales/product-2.png",
-    ratingImage: "../Images/ratings/rating-5.png"
+    ratingImage: "../Images/ratings/rating-5.png",
+    liked: false,
+    watched: false
   },
   {
     id: 7,
@@ -53,7 +65,9 @@ export const flashSalesProducts = [
     price: 850,
     discount: 18,
     image: "../Images/flash-sales/product-3.png",
-    ratingImage: "../Images/ratings/rating-4.5.png"
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
   },
   {
     id: 8,
@@ -61,7 +75,9 @@ export const flashSalesProducts = [
     price: 60,
     discount: 10,
     image: "../Images/flash-sales/product-4.png",
-    ratingImage: "../Images/ratings/rating-4.png"
+    ratingImage: "../Images/ratings/rating-4.png",
+    liked: false,
+    watched: false
   },
   {
     id: 9,
@@ -69,7 +85,9 @@ export const flashSalesProducts = [
     price: 80,
     discount: 22,
     image: "../Images/flash-sales/product-1.png",
-    ratingImage: "../Images/ratings/rating-5.png"
+    ratingImage: "../Images/ratings/rating-5.png",
+    liked: false,
+    watched: false
   },
   {
     id: 10,
@@ -77,6 +95,42 @@ export const flashSalesProducts = [
     price: 150,
     discount: 28,
     image: "../Images/flash-sales/product-2.png",
-    ratingImage: "../Images/ratings/rating-4.5.png"
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
   }
 ];
+
+export const categories = [
+  {
+    id: 1,
+    name: "Phones",
+    image: "../Images/categories/Category-CellPhone.png"
+  },
+  {
+    id: 2,
+    name: "Computers",
+    image: "../Images/categories/Category-Computer.png"
+  },
+  {
+    id: 3,
+    name: "Camera",
+    image: "../Images/categories/Category-Camera.png"
+  },
+  {
+    id: 4,
+    name: "Smartwatch",
+    image: "../Images/categories/Category-Smartwatch.png"
+  },
+  {
+    id: 5,
+    name: "Headphones",
+    image: "../Images/categories/Category-Headphone.png"
+  },
+  {
+    id: 6,
+    name: "Gaming",
+    image: "../Images/categories/Category-Gamepad.png"
+  }
+
+]

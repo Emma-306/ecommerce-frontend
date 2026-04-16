@@ -154,13 +154,13 @@
       </nav>
     </div>
     <div
-      class="h-[600px] pl-14 xl:pl-36 w-full flex flex-col justify-start items-start gap-4 pr-2 mb-12  relative"
+      class="h-[600px] pl-14 xl:pl-36 w-full flex flex-col justify-start items-start gap-4 pr-2 mb-16  relative"
     >
       <div class="flex flex-row gap-4 items-center justify-center">
         <div class="bg-theme h-9 w-5 rounded-sm"></div>
         <span class="text-theme font-semibold text-base">Today's</span>
       </div>
-      <div class="flex flex-row items-end mb-4">
+      <div class="flex flex-row items-end mb-4 relative justify-start w-full">
         <div class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4">
           <span
             class="text-black font-semibold text-4xl mr-10 md:mr-20 whitespace-nowrap"
@@ -188,6 +188,14 @@
             </div>
           </div>
         </div>
+        <div class="flex flex-row items-center justify-center gap-2 absolute right-4  lg:right-28 top-10 md:top-0">
+          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
+            <i class="fa-solid fa-arrow-left" style="color: rgb(11, 11, 11);"></i>
+          </div>
+          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
+            <i class="fa-solid fa-arrow-right" style="color: rgb(11, 11, 11);"></i>
+          </div>
+        </div>
       </div>
       <div
         class="flex flex-row h-[400px] gap-8 items-start overflow-x-auto justify-start w-full scroll-smooth"
@@ -196,6 +204,9 @@
       <div class="left-14 xl:left-36 right-14 xl:right-36 bottom-0 flex absolute border-b-2 h-32 items-center justify-center">
         <button class="px-8 py-3 bg-theme text-white rounded">View All Products</button>
       </div>
+    </div>
+    <div class="px-14 xl:px-36 flex flex-col bg-red-500 h-80 w-full">
+
     </div>
     <script src="../js/main.js" type="module"></script>
   </body>

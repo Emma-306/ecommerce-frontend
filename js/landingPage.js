@@ -36,31 +36,9 @@ export function renderLandingPage() {
         </div>
     `;
   });
-  flashSalesImages.addEventListener("click", (e) => {
-    const icon = e.target.closest("i");
-    if (!icon) return;
+  
+  updateIcons(flashSalesImages, flashSalesProducts);
 
-    const id = Number(icon.dataset.id);
-    const product = flashSalesProducts.find(p => p.id === id);
-    if (!product) return;
-
-    const type = icon.dataset.type;
-
-    if (type === "like") {
-      product.liked = !product.liked;
-
-      icon.classList.toggle("fa-regular");
-      icon.classList.toggle("fa-solid");
-      icon.classList.toggle("text-theme");
-    }
-
-    if (type === "watch") {
-      product.watched = !product.watched;
-
-      icon.classList.toggle("fa-eye");
-      icon.classList.toggle("fa-eye-slash");
-    }
-  });
   categories.forEach((category)=>{
     categoriesContainer.innerHTML += `
       <div class="h-full w-[182px] border border-gray-200 ">
@@ -71,4 +49,32 @@ export function renderLandingPage() {
       </div>
     `
   });
+  function updateIcons(images,products) {
+    images.addEventListener("click", (e) => {
+      const icon = e.target.closest("i");
+      if (!icon) return;
+
+      const id = Number(icon.dataset.id);
+      const product = products.find(p => p.id === id);
+      if (!product) return;
+
+      const type = icon.dataset.type;
+
+      if (type === "like") {
+        product.liked = !product.liked;
+
+        icon.classList.toggle("fa-regular");
+        icon.classList.toggle("fa-solid");
+        icon.classList.toggle("text-theme");
+      }
+
+      if (type === "watch") {
+        product.watched = !product.watched;
+
+        icon.classList.toggle("fa-eye");
+        icon.classList.toggle("fa-eye-slash");
+      }
+    });
+  }
 }
+

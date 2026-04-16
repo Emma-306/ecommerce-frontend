@@ -1,13 +1,14 @@
 import { renderLandingPage } from "./landingPage.js";
 
+if(document.body.classList.contains("landing-page")){
+  renderLandingPage();
+}
 
-renderLandingPage();
 
 function initNav(barId, linksId, containerId) {
   const bar = document.getElementById(barId);
   const links = document.getElementById(linksId);
   const container = document.getElementById(containerId);
- console.log(bar, 'debugging');
 
   if (!bar || !links || !container) return;
   

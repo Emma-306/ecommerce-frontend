@@ -39,7 +39,7 @@
         </select>
       </div>
       <div
-        class=" transition-all duration-300 flex flex-col lg:flex-row h-32 lg:h-16 items-center lg:items-end w-full bg-white py-4 px-10 lg:px-32 justify-center md:justify-center border-b-2 border-gray-300 shadow-md lg:gap-24 relative"
+        class="transition-all duration-300 flex flex-col lg:flex-row h-32 lg:h-16 items-center lg:items-end w-full bg-white py-4 px-10 lg:px-32 justify-center md:justify-center border-b-2 border-gray-300 shadow-md lg:gap-24 relative"
         id="nav-container-landing"
       >
         <span class="font-bold text-2xl mb-3 lg:mb-0 xl:mr-52">Exclusive</span>
@@ -93,7 +93,7 @@
     >
       <nav class="flex flex-col lg:flex-row w-full h-96">
         <div class="w-full lg:w-[30%] bg-white h-full pt-4 border-r-2">
-          <ul class="xl:pl-36 w-full pl-14 font-medium space-y-3">
+          <ul class="xl:pl-36 w-full pl-6 md:pl-14 font-medium space-y-3">
             <li>Woman’s Fashion</li>
             <li>Men’s Fashion</li>
             <li>Electronics</li>
@@ -106,7 +106,7 @@
           </ul>
         </div>
         <div
-          class="w-full lg:w-[70%] h-full pt-5 pl-14 lg:pl-24 px-14 lg:p-0 hidden md:flex items-center bg-white"
+          class="w-full lg:w-[70%] h-full pt-5 pl-6 md:pl-14 lg:pl-24 px-14 lg:p-0 hidden md:flex items-center bg-white"
         >
           <div class="w-full lg:w-[84%] h-80 bg-black relative min-w-[600px]">
             <svg
@@ -154,14 +154,16 @@
       </nav>
     </div>
     <div
-      class="h-[600px] pl-14 xl:pl-36 w-full flex flex-col justify-start items-start gap-4 pr-2 mb-16  relative"
+      class="h-[600px] pl-6 md:pl-14 xl:pl-36 w-full flex flex-col justify-start items-start gap-4 pr-2 mb-16 relative"
     >
       <div class="flex flex-row gap-4 items-center justify-center">
         <div class="bg-theme h-9 w-5 rounded-sm"></div>
         <span class="text-theme font-semibold text-base">Today's</span>
       </div>
       <div class="flex flex-row items-end mb-4 relative justify-start w-full">
-        <div class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4">
+        <div
+          class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4"
+        >
           <span
             class="text-black font-semibold text-4xl mr-10 md:mr-20 whitespace-nowrap"
             >Flash Sales</span
@@ -188,12 +190,24 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-row items-center justify-center gap-2 absolute right-4  lg:right-28 top-10 md:top-0">
-          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
-            <i class="fa-solid fa-arrow-left" style="color: rgb(11, 11, 11);"></i>
+        <div
+          class="flex flex-row items-center justify-center gap-2 absolute right-4 lg:right-28 top-10 md:top-0"
+        >
+          <div
+            class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-arrow-left"
+              style="color: rgb(11, 11, 11)"
+            ></i>
           </div>
-          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
-            <i class="fa-solid fa-arrow-right" style="color: rgb(11, 11, 11);"></i>
+          <div
+            class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-arrow-right"
+              style="color: rgb(11, 11, 11)"
+            ></i>
           </div>
         </div>
       </div>
@@ -201,33 +215,92 @@
         class="flex flex-row h-[400px] gap-8 items-start overflow-x-auto justify-start w-full scroll-smooth"
         id="flash-sales-images"
       ></div>
-      <div class="left-14 xl:left-36 right-14 xl:right-36 bottom-0 flex absolute border-b-2 h-32 items-center justify-center">
-        <button class="px-8 py-3 bg-theme text-white rounded">View All Products</button>
+      <div
+        class="left-14 xl:left-36 right-14 xl:right-36 bottom-0 flex absolute border-b-2 h-32 items-center justify-center"
+      >
+        <button class="px-8 py-3 bg-theme text-white rounded">
+          View All Products
+        </button>
       </div>
     </div>
-    <div class="px-14 xl:px-36 flex flex-col h-80 w-full gap-4">
+    <div class="px-6 md:px-14 xl:px-36 flex flex-col h-80 w-full gap-4 relative mb-16">
       <div class="flex flex-row gap-4 items-center justify-start">
         <div class="bg-theme h-9 w-5 rounded-sm"></div>
         <span class="text-theme font-semibold text-base">Categories</span>
       </div>
       <div class="flex flex-row items-end mb-4 relative justify-start w-full">
-        <div class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4">
+        <div
+          class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4"
+        >
           <span
             class="text-black font-semibold text-4xl mr-10 md:mr-20 whitespace-nowrap"
             >Browse By Category</span
           >
         </div>
-        <div class="flex flex-row items-center justify-center gap-2 absolute right-4  lg:right-0 -top-14 md:top-0">
-          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
-            <i class="fa-solid fa-arrow-left" style="color: rgb(11, 11, 11);"></i>
+        <div
+          class="flex flex-row items-center justify-center gap-2 absolute right-4 lg:right-0 -top-14 md:top-0"
+        >
+          <div
+            class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-arrow-left"
+              style="color: rgb(11, 11, 11)"
+            ></i>
           </div>
-          <div class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer">
-            <i class="fa-solid fa-arrow-right" style="color: rgb(11, 11, 11);"></i>
+          <div
+            class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-arrow-right"
+              style="color: rgb(11, 11, 11)"
+            ></i>
           </div>
         </div>
       </div>
-      <div class="w-full h-[145px] rounded-lg grid grid-cols-6 gap-4" id="categories-container">
-        
+      <div
+        class="w-full h-[145px] flex overflow-x-auto gap-5 xl:gap-[25px]"
+        id="categories-container"
+      ></div>
+      <div
+        class="absolute left-14 xl:left-36 right-14 xl:right-36 bottom-0 border-b-2"
+      ></div>
+    </div>
+    <div
+      class="h-[500px] px-6 md:px-14 xl:px-36 w-full flex flex-col justify-start items-start gap-8 mb-16 relative"
+    >
+      <div class="flex flex-row gap-4 items-center justify-start">
+        <div class="bg-theme h-9 w-5 rounded-sm"></div>
+        <span class="text-theme font-semibold text-base">This Month</span>
+      </div>
+      <div
+        class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4"
+      >
+        <span
+          class="text-black font-semibold text-4xl mr-10 md:mr-20 whitespace-nowrap"
+          >Best Selling Products</span
+        >
+      </div>
+      <div
+        class="flex flex-row items-center justify-center gap-2 absolute right-4 md:right-10 lg:right-24 xl:right-36 top-0"
+      >
+        <button class="px-8 py-3 bg-theme text-white rounded">
+          View All
+        </button>
+      </div>
+      <div
+        class="flex flex-row h-[400px] gap-6 items-start overflow-x-auto justify-start w-full scroll-smooth"
+        id="best-selling-images"
+      ></div>
+    </div>
+    <div class=" h-[400px] w-full px-6 md:px-14 xl:px-36">
+      <div class="w-full h-full bg-[radial-gradient(circle_350px_at_70%_50%,rgb(99,99,99)_5%,black_100%)] flex flex-row relative">
+        <div class="w-[50%] h-full">
+
+        </div>
+        <div class="w-[50%] h-full absolute right-16">
+          <img  class="w-full h-full" src="../Images/Jbl-speaker.png" alt="">
+        </div>
       </div>
     </div>
     <script src="../js/main.js" type="module"></script>

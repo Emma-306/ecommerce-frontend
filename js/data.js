@@ -133,4 +133,57 @@ export const categories = [
     image: "../Images/categories/Category-Gamepad.png"
   }
 
-]
+];
+
+export const bestSellingProducts = [
+  {
+    id: 11,
+    name: "The north coat",
+    price: 360,
+    discount: 28,
+    image: "../Images/best-selling-products/product-1.png",
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 12,
+    name: "Gucci duffle bag",
+    price: 1160,
+    discount: 17,
+    image: "../Images/best-selling-products/product-2.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 13,
+    name: "RGB liquid CPU Cooler",
+    price: 170,
+    discount: 6,
+    image: "../Images/best-selling-products/product-3.png",
+    ratingImage: "../Images/ratings/rating-5.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 14,
+    name: "Small BookSelf",
+    price: 360,
+    discount: 25,
+    image: "../Images/best-selling-products/product-4.png",
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 15,
+    name: "Mechanical Gaming Keyboard",
+    price: 150,
+    discount: 28,
+    image: "../Images/flash-sales/product-2.png",
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
+  }
+];

@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-#flash-sales-images::-webkit-scrollbar {
+#categories-container::-webkit-scrollbar, #flash-sales-images::-webkit-scrollbar {
   display: none;
 }
 
-#flash-sales-images {
+#categories-container,#flash-sales-images {
   -ms-overflow-style: none;  
   scrollbar-width: none;   
 }

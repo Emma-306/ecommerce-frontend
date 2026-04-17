@@ -187,3 +187,106 @@ export const bestSellingProducts = [
     watched: false
   }
 ];
+
+export const exploreProducts = [
+  {
+    id: 21,
+    name: "Breed Dry Dog Food",
+    price: 100,
+    image: "../Images/products/product-1.png",
+    ratingImage: "../Images/ratings/rating-3.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 22,
+    name: "CANON EOS DSLR Camera",
+    price: 360,
+    image: "../Images/products/product-5.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 23,
+    name: "ASUS FHD Gaming Laptop",
+    price: 700,
+    image: "../Images/products/product-7.png",
+    ratingImage: "../Images/ratings/rating-5.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 24,
+    name: "Curology Product Set",
+    price: 500,
+    image: "../Images/products/product-4.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 25,
+    name: "Kids Electric Car",
+    price: 960,
+    image: "../Images/products/product-8.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "new",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 26,
+    name: "Jr. Zoom Soccer Cleats",
+    price: 1160,
+    image: "../Images/products/product-3.png",
+    ratingImage: "../Images/ratings/rating-5.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 27,
+    name: "GP11 Shooter USB Gamepad",
+    price: 660,
+    image: "../Images/products/product-6.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "new",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 28,
+    name: "Quilted Satin Jacket",
+    price: 660,
+    image: "../Images/products/product-2.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 24,
+    name: "Curology Product Set",
+    price: 500,
+    image: "../Images/products/product-4.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "old",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 25,
+    name: "Kids Electric Car",
+    price: 960,
+    image: "../Images/products/product-8.png",
+    ratingImage: "../Images/ratings/rating-4.png",
+    status: "new",
+    liked: false,
+    watched: false
+  }
+];

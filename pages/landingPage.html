@@ -223,7 +223,9 @@
         </button>
       </div>
     </div>
-    <div class="px-6 md:px-14 xl:px-36 flex flex-col h-80 w-full gap-4 relative mb-16">
+    <div
+      class="px-6 md:px-14 xl:px-36 flex flex-col h-80 w-full gap-4 relative mb-16"
+    >
       <div class="flex flex-row gap-4 items-center justify-start">
         <div class="bg-theme h-9 w-5 rounded-sm"></div>
         <span class="text-theme font-semibold text-base">Categories</span>
@@ -284,47 +286,101 @@
       <div
         class="flex flex-row items-center justify-center gap-2 absolute right-4 md:right-10 lg:right-24 xl:right-36 top-0"
       >
-        <button class="px-8 py-3 bg-theme text-white rounded">
-          View All
-        </button>
+        <button class="px-8 py-3 bg-theme text-white rounded">View All</button>
       </div>
       <div
         class="flex flex-row h-[400px] gap-6 items-start overflow-x-auto justify-start w-full scroll-smooth"
         id="best-selling-images"
       ></div>
     </div>
-    <div class=" h-[450px] w-full px-6 md:px-14 xl:px-36 hidden lg:block">
-      <div class="w-full h-full bg-[radial-gradient(circle_350px_at_70%_50%,rgb(99,99,99)_5%,black_100%)] flex flex-row relative">
+    <div class="h-[450px] w-full px-6 md:px-14 xl:px-36 hidden lg:block mb-16">
+      <div
+        class="w-full h-full bg-[radial-gradient(circle_350px_at_70%_50%,rgb(99,99,99)_5%,black_100%)] flex flex-row relative"
+      >
         <div class="w-[50%] h-full">
           <div class="flex flex-col absolute left-12 top-16 h-72 gap-5">
             <span class="font-semibold text-mygreen text-base">categories</span>
-            <span class="font-semibold text-white text-5xl mb-3">Enhance Your <br>Music Experience</span>
-            <div class="flex flex-row gap-3 mb-3"> 
-              <div class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center">
+            <span class="font-semibold text-white text-5xl mb-3"
+              >Enhance Your <br />Music Experience</span
+            >
+            <div class="flex flex-row gap-3 mb-3">
+              <div
+                class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center"
+              >
                 <span class="font-semibold text-base">05</span>
                 <span class="text-[11px]">Days</span>
               </div>
-              <div class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center">
+              <div
+                class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center"
+              >
                 <span class="font-semibold text-base">23</span>
                 <span class="text-[11px]">Hours</span>
               </div>
-              <div class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center">
+              <div
+                class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center"
+              >
                 <span class="font-semibold text-base">59</span>
                 <span class="text-[11px]">Minutes</span>
               </div>
-              <div class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center">
+              <div
+                class="flex flex-col rounded-full bg-white text-black h-16 w-16 items-center justify-center"
+              >
                 <span class="font-semibold text-base">35</span>
                 <span class="text-[11px]">Seconds</span>
               </div>
             </div>
-            <button class="px-4 py-2 text-white bg-mygreen w-32 h-20 rounded">Buy Now</button>
+            <button class="px-4 py-2 text-white bg-mygreen w-32 h-20 rounded">
+              Buy Now
+            </button>
           </div>
         </div>
         <div class="w-[50%] h-full absolute right-16 top-4">
-          <img  class="w-[90%] h-[90%]" src="../Images/Jbl-speaker.png" alt="">
+          <img class="w-[90%] h-[90%]" src="../Images/Jbl-speaker.png" alt="" />
         </div>
       </div>
     </div>
+    <div
+      class="h-32 px-6 md:px-14 xl:px-36 w-full flex flex-col justify-start items-start gap-8 mb-8 relative"
+    >
+      <div class="flex flex-row gap-4 items-center justify-start">
+        <div class="bg-theme h-9 w-5 rounded-sm"></div>
+        <span class="text-theme font-semibold text-base">Our Products</span>
+      </div>
+      <div class="flex flex-row items-end mb-4 relative justify-start w-full">
+        <div
+          class="flex flex-col md:flex-row items-end justify-start gap-2 md:gap-4"
+        >
+          <span
+            class="text-black font-semibold text-4xl mr-10 md:mr-20 whitespace-nowrap"
+            >Explore Our Products</span
+          >
+        </div>
+        <div
+          class="flex flex-row items-center justify-center gap-2 absolute right-4 lg:right-0 -top-14 md:top-0"
+        >
+          <div
+            class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-arrow-left"
+              style="color: rgb(11, 11, 11)"
+            ></i>
+          </div>
+          <div
+            class="h-10 w-10 flex items-center justify-center bg-gray-100 hover:bg-gray-300 rounded-full cursor-pointer"
+          >
+            <i
+              class="fa-solid fa-arrow-right"
+              style="color: rgb(11, 11, 11)"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-full grid grid-rows-2 grid-flow-col auto-cols-[14rem] gap-6 overflow-x-auto scroll-smooth px-6 md:px-14 xl:px-36"
+      id="explore-products-container"
+    ></div>
     <script src="../js/main.js" type="module"></script>
   </body>
 </html>

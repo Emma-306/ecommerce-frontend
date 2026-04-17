@@ -1,7 +1,8 @@
-import { flashSalesProducts,categories,bestSellingProducts } from "./data.js";
+import { flashSalesProducts,categories,bestSellingProducts,exploreProducts } from "./data.js";
 const flashSalesImages = document.getElementById("flash-sales-images");
 const bestSellingImages = document.getElementById("best-selling-images");
 const categoriesContainer = document.getElementById("categories-container");
+const exploreProductsContainer = document.getElementById("explore-products-container");
 
 export function renderLandingPage() {
   
@@ -22,6 +23,9 @@ export function renderLandingPage() {
       </div>
     `
   });
+  console.log(exploreProducts);
+  displayProduct(exploreProducts, exploreProductsContainer);
+  updateIcons(exploreProductsContainer, exploreProducts);
 }
 
 function displayImages(images,products){
@@ -88,3 +92,36 @@ function updateIcons(images,products) {
   });
 }
 
+function displayProduct(products,images){
+  products.forEach((item) => {
+    images.innerHTML += `
+        <div class="group w-60 h-80 bg-transparent rounded flex-shrink-0">
+            <div class="flex items-center justify-center p-3 bg-gray-200 rounded relative h-56 mb-2">
+              <img src=${item.image} alt="" class="w-36 h-36">
+              <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
+                <i 
+                  class="fa-regular fa-heart text-black cursor-pointer"
+                  data-type="like"
+                  data-liked="${item.liked}" data-id="${item.id}">
+                </i>
+              </div>
+              <div class="absolute right-2 top-12 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
+                <i class="fa-regular fa-eye text-black"
+                data-type="watch"
+                data-watched="${item.watched}" data-id="${item.id}">
+                </i>
+              </div>
+              <div class="absolute left-0 right-0 bottom-0 bg-black h-9 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded-b"><p>Add To Cart</p></div>
+            </div>
+            <div class="flex flex-col items-start justify-start rounded">
+              <span class="font-medium text-sm">${item.name}</span>
+              <div class="flex flex-row gap-2 mb-2">
+                <span class="text-base font text-theme">$${item.price}</span>
+              </div>
+              <img src=${item.ratingImage} alt="" class="h-5">
+            </div>
+          </div>
+        </div>
+    `;
+  });
+}

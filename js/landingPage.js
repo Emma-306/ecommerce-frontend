@@ -97,6 +97,12 @@ function displayProduct(products,images){
     images.innerHTML += `
         <div class="group w-60 h-80 bg-transparent rounded flex-shrink-0">
             <div class="flex items-center justify-center p-3 bg-gray-200 rounded relative h-56 mb-2">
+              ${item.status === "new" 
+                ? `<div class="absolute top-2 left-2 px-2 py-1 bg-mygreen text-white rounded-md text-sm">
+                      NEW
+                  </div>` 
+                : ""
+              }
               <img src=${item.image} alt="" class="w-36 h-36">
               <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
                 <i 

@@ -695,12 +695,20 @@ video {
   grid-column: span 2 / span 2;
 }
 
+.col-span-1 {
+  grid-column: span 1 / span 1;
+}
+
 .row-span-2 {
   grid-row: span 2 / span 2;
 }
 
 .row-span-4 {
   grid-row: span 4 / span 4;
+}
+
+.row-span-1 {
+  grid-row: span 1 / span 1;
 }
 
 .mb-10 {
@@ -777,6 +785,18 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mb-32 {
+  margin-bottom: 8rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
 }
 
 .flex {
@@ -895,6 +915,46 @@ video {
   height: 12rem;
 }
 
+.h-28 {
+  height: 7rem;
+}
+
+.h-\[\] {
+  height: ;
+}
+
+.h-\[500\] {
+  height: 500;
+}
+
+.h-\[50px\] {
+  height: 50px;
+}
+
+.h-\[550px\] {
+  height: 550px;
+}
+
+.h-\[80\] {
+  height: 80;
+}
+
+.h-\[80\%\] {
+  height: 80%;
+}
+
+.h-\[\%\] {
+  height: %;
+}
+
+.h-\[9\%\] {
+  height: 9%;
+}
+
+.h-\[95\%\] {
+  height: 95%;
+}
+
 .w-10 {
   width: 2.5rem;
 }
@@ -983,6 +1043,22 @@ video {
   width: 100%;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[80\] {
+  width: 80;
+}
+
+.w-\[80\%\] {
+  width: 80%;
+}
+
+.w-\[70\%\] {
+  width: 70%;
+}
+
 .min-w-\[600px\] {
   min-width: 600px;
 }
@@ -1045,6 +1121,10 @@ video {
 
 .justify-start {
   justify-content: flex-start;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -1210,8 +1290,112 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.bg-\[\] {
+  background-color: ;
+}
+
+.bg-\[url\] {
+  background-color: url;
+}
+
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.bg-green-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.bg-zinc-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+}
+
 .bg-\[radial-gradient\(circle_350px_at_70\%_50\%\2c rgb\(99\2c 99\2c 99\)_5\%\2c black_100\%\)\] {
   background-image: radial-gradient(circle 350px at 70% 50%,rgb(99,99,99) 5%,black 100%);
+}
+
+.bg-\[url\(\)\] {
+  background-image: url();
+}
+
+.bg-\[url\(\.\.\)\] {
+  background-image: url(..);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/ps5-slim-goedkope-playstation_large1\.png\)\] {
+  background-image: url(../Images/new-products/ps5-slim-goedkope-playstation_large1.png);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play\.png\)\] {
+  background-image: url(../Images/new-products/play.png);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play-stat\.png\)\] {
+  background-image: url(../Images/new-products/play-stat.png);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play-station\.png\)\] {
+  background-image: url(../Images/new-products/play-station.png);
+}
+
+.bg-\[url\(\'\'\.\.\/Images\/new-products\/play-station\.png\)\] {
+  background-image: url(''../Images/new-products/play-station.png);
+}
+
+.bg-\[url\(\"\"\.\.\/Images\/new-products\/play-station\.png\)\] {
+  background-image: url(""../Images/new-products/play-station.png);
+}
+
+.bg-\[url\(\'\'\)\] {
+  background-image: url('');
+}
+
+.bg-\[url\(\'\.\.\/Images\/new-products\/play-station\.png\'\)\] {
+  background-image: url('../Images/new-products/play-station.png');
+}
+
+.bg-\[url\(\.\.\/Images\/new-\)\] {
+  background-image: url(../Images/new-);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play\)\] {
+  background-image: url(../Images/new-products/play);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play-s\)\] {
+  background-image: url(../Images/new-products/play-s);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play-stat\)\] {
+  background-image: url(../Images/new-products/play-stat);
+}
+
+.bg-\[url\(\.\.\/Images\/new-products\/play-station\)\] {
+  background-image: url(../Images/new-products/play-station);
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-contain {
+  background-size: contain;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .object-cover {

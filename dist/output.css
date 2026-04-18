@@ -591,8 +591,16 @@ video {
   bottom: 3.5rem;
 }
 
+.bottom-16 {
+  bottom: 4rem;
+}
+
 .bottom-4 {
   bottom: 1rem;
+}
+
+.bottom-8 {
+  bottom: 2rem;
 }
 
 .left-0 {
@@ -621,6 +629,10 @@ video {
 
 .left-36 {
   left: 9rem;
+}
+
+.left-8 {
+  left: 2rem;
 }
 
 .right-0 {
@@ -687,16 +699,24 @@ video {
   top: 1.25rem;
 }
 
+.left-3 {
+  left: 0.75rem;
+}
+
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
 .z-50 {
   z-index: 50;
 }
 
-.col-span-2 {
-  grid-column: span 2 / span 2;
-}
-
 .col-span-1 {
   grid-column: span 1 / span 1;
+}
+
+.col-span-2 {
+  grid-column: span 2 / span 2;
 }
 
 .row-span-2 {
@@ -705,10 +725,6 @@ video {
 
 .row-span-4 {
   grid-row: span 4 / span 4;
-}
-
-.row-span-1 {
-  grid-row: span 1 / span 1;
 }
 
 .mb-10 {
@@ -721,6 +737,10 @@ video {
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.mb-24 {
+  margin-bottom: 6rem;
 }
 
 .mb-3 {
@@ -787,16 +807,8 @@ video {
   margin-top: 2rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.mb-32 {
-  margin-bottom: 8rem;
-}
-
-.mb-24 {
-  margin-bottom: 6rem;
+.mb-40 {
+  margin-bottom: 10rem;
 }
 
 .flex {
@@ -895,64 +907,32 @@ video {
   height: 600px;
 }
 
+.h-\[80\%\] {
+  height: 80%;
+}
+
 .h-\[90\%\] {
   height: 90%;
+}
+
+.h-\[95\%\] {
+  height: 95%;
 }
 
 .h-full {
   height: 100%;
 }
 
-.h-40 {
-  height: 10rem;
+.h-\[300\] {
+  height: 300;
 }
 
-.h-4 {
-  height: 1rem;
+.h-\[300px\] {
+  height: 300px;
 }
 
-.h-48 {
-  height: 12rem;
-}
-
-.h-28 {
-  height: 7rem;
-}
-
-.h-\[\] {
-  height: ;
-}
-
-.h-\[500\] {
-  height: 500;
-}
-
-.h-\[50px\] {
-  height: 50px;
-}
-
-.h-\[550px\] {
-  height: 550px;
-}
-
-.h-\[80\] {
-  height: 80;
-}
-
-.h-\[80\%\] {
-  height: 80%;
-}
-
-.h-\[\%\] {
-  height: %;
-}
-
-.h-\[9\%\] {
-  height: 9%;
-}
-
-.h-\[95\%\] {
-  height: 95%;
+.h-\[250px\] {
+  height: 250px;
 }
 
 .w-10 {
@@ -1035,28 +1015,16 @@ video {
   width: 55%;
 }
 
+.w-\[70\%\] {
+  width: 70%;
+}
+
 .w-\[90\%\] {
   width: 90%;
 }
 
 .w-full {
   width: 100%;
-}
-
-.w-\[\] {
-  width: ;
-}
-
-.w-\[80\] {
-  width: 80;
-}
-
-.w-\[80\%\] {
-  width: 80%;
-}
-
-.w-\[70\%\] {
-  width: 70%;
 }
 
 .min-w-\[600px\] {
@@ -1087,12 +1055,12 @@ video {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.grid-rows-4 {
-  grid-template-rows: repeat(4, minmax(0, 1fr));
-}
-
 .grid-rows-2 {
   grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.grid-rows-4 {
+  grid-template-rows: repeat(4, minmax(0, 1fr));
 }
 
 .flex-row {
@@ -1101,10 +1069,6 @@ video {
 
 .flex-col {
   flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
 }
 
 .items-start {
@@ -1165,6 +1129,10 @@ video {
 
 .gap-8 {
   gap: 2rem;
+}
+
+.gap-1 {
+  gap: 0.25rem;
 }
 
 .space-y-3 > :not([hidden]) ~ :not([hidden]) {
@@ -1246,6 +1214,11 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.bg-\[\#0D0D0D\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 13 13 / var(--tw-bg-opacity));
+}
+
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -1290,112 +1263,8 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[\] {
-  background-color: ;
-}
-
-.bg-\[url\] {
-  background-color: url;
-}
-
-.bg-gray-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
-}
-
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
-.bg-zinc-900 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(24 24 27 / var(--tw-bg-opacity));
-}
-
 .bg-\[radial-gradient\(circle_350px_at_70\%_50\%\2c rgb\(99\2c 99\2c 99\)_5\%\2c black_100\%\)\] {
   background-image: radial-gradient(circle 350px at 70% 50%,rgb(99,99,99) 5%,black 100%);
-}
-
-.bg-\[url\(\)\] {
-  background-image: url();
-}
-
-.bg-\[url\(\.\.\)\] {
-  background-image: url(..);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/ps5-slim-goedkope-playstation_large1\.png\)\] {
-  background-image: url(../Images/new-products/ps5-slim-goedkope-playstation_large1.png);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play\.png\)\] {
-  background-image: url(../Images/new-products/play.png);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play-stat\.png\)\] {
-  background-image: url(../Images/new-products/play-stat.png);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play-station\.png\)\] {
-  background-image: url(../Images/new-products/play-station.png);
-}
-
-.bg-\[url\(\'\'\.\.\/Images\/new-products\/play-station\.png\)\] {
-  background-image: url(''../Images/new-products/play-station.png);
-}
-
-.bg-\[url\(\"\"\.\.\/Images\/new-products\/play-station\.png\)\] {
-  background-image: url(""../Images/new-products/play-station.png);
-}
-
-.bg-\[url\(\'\'\)\] {
-  background-image: url('');
-}
-
-.bg-\[url\(\'\.\.\/Images\/new-products\/play-station\.png\'\)\] {
-  background-image: url('../Images/new-products/play-station.png');
-}
-
-.bg-\[url\(\.\.\/Images\/new-\)\] {
-  background-image: url(../Images/new-);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play\)\] {
-  background-image: url(../Images/new-products/play);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play-s\)\] {
-  background-image: url(../Images/new-products/play-s);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play-stat\)\] {
-  background-image: url(../Images/new-products/play-stat);
-}
-
-.bg-\[url\(\.\.\/Images\/new-products\/play-station\)\] {
-  background-image: url(../Images/new-products/play-station);
-}
-
-.bg-cover {
-  background-size: cover;
-}
-
-.bg-contain {
-  background-size: contain;
-}
-
-.bg-center {
-  background-position: center;
-}
-
-.bg-no-repeat {
-  background-repeat: no-repeat;
 }
 
 .object-cover {
@@ -1674,11 +1543,11 @@ video {
   transition-duration: 300ms;
 }
 
-#best-selling-images::-webkit-scrollbar, #categories-container::-webkit-scrollbar, #flash-sales-images::-webkit-scrollbar {
+#explore-products-container::-webkit-scrollbar,#best-selling-images::-webkit-scrollbar, #categories-container::-webkit-scrollbar, #flash-sales-images::-webkit-scrollbar {
   display: none;
 }
 
-#best-selling-images,#categories-container,#flash-sales-images {
+#explore-products-container,#best-selling-images,#categories-container,#flash-sales-images {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -1723,6 +1592,12 @@ video {
   opacity: 1;
 }
 
+@media (min-width: 640px) {
+  .sm\:gap-2 {
+    gap: 0.5rem;
+  }
+}
+
 @media (min-width: 768px) {
   .md\:right-10 {
     right: 2.5rem;
@@ -1756,6 +1631,10 @@ video {
     height: 3rem;
   }
 
+  .md\:h-\[300px\] {
+    height: 300px;
+  }
+
   .md\:h-\[730px\] {
     height: 730px;
   }
@@ -1778,6 +1657,10 @@ video {
 
   .md\:gap-6 {
     gap: 1.5rem;
+  }
+
+  .md\:gap-2 {
+    gap: 0.5rem;
   }
 
   .md\:px-14 {
@@ -1805,6 +1688,18 @@ video {
 
   .lg\:right-28 {
     right: 7rem;
+  }
+
+  .lg\:left-8 {
+    left: 2rem;
+  }
+
+  .lg\:bottom-8 {
+    bottom: 2rem;
+  }
+
+  .lg\:bottom-16 {
+    bottom: 4rem;
   }
 
   .lg\:mb-0 {
@@ -1899,6 +1794,14 @@ video {
     gap: 6rem;
   }
 
+  .lg\:gap-6 {
+    gap: 1.5rem;
+  }
+
+  .lg\:gap-4 {
+    gap: 1rem;
+  }
+
   .lg\:p-0 {
     padding: 0px;
   }
@@ -1937,6 +1840,21 @@ video {
 
   .lg\:pt-40 {
     padding-top: 10rem;
+  }
+
+  .lg\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .lg\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .lg\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
   }
 }
 

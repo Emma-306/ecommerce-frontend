@@ -2,11 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-#best-selling-images::-webkit-scrollbar, #categories-container::-webkit-scrollbar, #flash-sales-images::-webkit-scrollbar {
+#explore-products-container::-webkit-scrollbar,#best-selling-images::-webkit-scrollbar, #categories-container::-webkit-scrollbar, #flash-sales-images::-webkit-scrollbar {
   display: none;
 }
 
-#best-selling-images,#categories-container,#flash-sales-images {
+#explore-products-container,#best-selling-images,#categories-container,#flash-sales-images {
   -ms-overflow-style: none;  
   scrollbar-width: none;   
 }

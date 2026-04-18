@@ -1643,6 +1643,10 @@ video {
     flex-direction: row;
   }
 
+  .md\:items-center {
+    align-items: center;
+  }
+
   .md\:justify-center {
     justify-content: center;
   }
@@ -1782,8 +1786,16 @@ video {
     align-items: flex-end;
   }
 
+  .lg\:items-center {
+    align-items: center;
+  }
+
   .lg\:justify-end {
     justify-content: flex-end;
+  }
+
+  .lg\:justify-center {
+    justify-content: center;
   }
 
   .lg\:gap-12 {

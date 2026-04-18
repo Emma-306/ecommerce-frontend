@@ -35,11 +35,18 @@ function displayImages(images,products){
             <div class="flex items-center justify-center p-3 bg-gray-200 rounded relative h-56 mb-2">
               <img src=${item.image} alt="" class="w-36 h-36">
               <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
-                <i 
-                  class="fa-regular fa-heart text-black cursor-pointer"
-                  data-type="like"
-                  data-liked="${item.liked}" data-id="${item.id}">
-                </i>
+                ${item.liked === false
+                  ? `<i 
+                      class="fa-regular fa-heart text-black cursor-pointer"
+                      data-type="like"
+                      data-liked="${item.liked}" data-id="${item.id}">
+                    </i>` 
+                  : `<i 
+                      class="fa-solid fa-heart text-theme cursor-pointer"
+                      data-type="like"
+                      data-liked="${item.liked}" data-id="${item.id}">
+                    </i>`
+                }
               </div>
               <div class="absolute right-2 top-12 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
                 <i class="fa-regular fa-eye text-black"
@@ -105,11 +112,18 @@ function displayProduct(products,images){
               }
               <img src=${item.image} alt="" class="w-36 h-36">
               <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
-                <i 
-                  class="fa-regular fa-heart text-black cursor-pointer"
-                  data-type="like"
-                  data-liked="${item.liked}" data-id="${item.id}">
-                </i>
+                ${item.liked === false
+                  ? `<i 
+                      class="fa-regular fa-heart text-black cursor-pointer"
+                      data-type="like"
+                      data-liked="${item.liked}" data-id="${item.id}">
+                    </i>` 
+                  : `<i 
+                      class="fa-solid fa-heart text-theme cursor-pointer"
+                      data-type="like"
+                      data-liked="${item.liked}" data-id="${item.id}">
+                    </i>`
+                }
               </div>
               <div class="absolute right-2 top-12 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
                 <i class="fa-regular fa-eye text-black"

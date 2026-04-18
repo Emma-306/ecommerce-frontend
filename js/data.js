@@ -16,7 +16,7 @@ export const flashSalesProducts = [
     discount: 35,
     image: "../Images/flash-sales/product-2.png",
     ratingImage: "../Images/ratings/rating-4.png",
-    liked: false,
+    liked: true,
     watched: false
   },
   {

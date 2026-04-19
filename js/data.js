@@ -106,7 +106,7 @@ export const allProducts = [
     image: "../Images/flash-sales/product-2.png",
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
-    liked: true,
+    liked: false,
     watched: false,
     category: "flashsales"
   },
@@ -390,6 +390,7 @@ export const allProducts = [
 
 export function getFlashSales(){
   const flashsalesProducts = [];
+  const allProducts = getAllProducts();
   allProducts.forEach((item)=>{
     if (item.category === "flashsales") flashsalesProducts.push(item);
   });
@@ -398,6 +399,7 @@ export function getFlashSales(){
 
 export function getBestProducts(){
   const bestSellingProducts = [];
+  const allProducts = getAllProducts();
   allProducts.forEach((item)=>{
     if (item.category === "best selling products") bestSellingProducts.push(item);
   });
@@ -406,8 +408,37 @@ export function getBestProducts(){
 
 export function getProducts(){
   const products = [];
+  const allProducts = getAllProducts();
   allProducts.forEach((item)=>{
     if (item.category === "products") products.push(item);
   });
   return products;
+}
+
+export function saveAllProducts(products){
+  try{
+    localStorage.setItem('myProducts',JSON.stringify(products));
+    console.log('Product saved sucessfully to localStorage');
+    return true;
+  } catch (error){
+    console.log('Error saving products',error);
+    return false;
+  }
+}
+
+export function getAllProducts(){
+  try {
+    const savedProducts = localStorage.getItem('myProducts');
+
+    if(savedProducts === null){
+      console.log("No products found In localStorage");
+      return [];
+    }
+    const products = JSON.parse(savedProducts);
+    console.log(`Retrieved ${products.length} products from localStorage`);
+    return products;
+  } catch (error){
+    console.error('Error retrieving products: ',error);
+    return;
+  }
 }

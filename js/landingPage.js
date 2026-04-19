@@ -1,4 +1,4 @@
-import {getFlashSales ,categories,getBestProducts,getProducts } from "./data.js";
+import {getFlashSales ,categories,getBestProducts,getProducts,wishlist,saveAllProducts,getAllProducts} from "./data.js";
 const flashSalesImages = document.getElementById("flash-sales-images");
 const bestSellingImages = document.getElementById("best-selling-images");
 const categoriesContainer = document.getElementById("categories-container");
@@ -8,11 +8,11 @@ export function renderLandingPage() {
   
   const flashSalesProducts = getFlashSales();
   displayImages(flashSalesImages,flashSalesProducts);
-  updateIcons(flashSalesImages, flashSalesProducts);
+  updateIcons(flashSalesImages);
   
   const bestSellingProducts = getBestProducts();
   displayImages(bestSellingImages,bestSellingProducts);
-  updateIcons(bestSellingImages,bestSellingProducts);
+  updateIcons(bestSellingImages);
 
   categories.forEach((category)=>{
     categoriesContainer.innerHTML += `
@@ -26,7 +26,7 @@ export function renderLandingPage() {
   });
   const exploreProducts = getProducts();
   displayImages(exploreProductsContainer,exploreProducts);
-  updateIcons(exploreProductsContainer, exploreProducts);
+  updateIcons(exploreProductsContainer);
 }
 
 function displayImages(images,products){
@@ -90,12 +90,13 @@ function displayImages(images,products){
   });
 }
 
-export function updateIcons(images,products) {
+export function updateIcons(images) {
   images.addEventListener("click", (e) => {
     const icon = e.target.closest("i");
     if (!icon) return;
 
     const id = Number(icon.dataset.id);
+    const products = getAllProducts(); 
     const product = products.find(p => p.id === id);
     if (!product) return;
 
@@ -103,10 +104,21 @@ export function updateIcons(images,products) {
 
     if (type === "like") {
       product.liked = !product.liked;
-
-      icon.classList.toggle("fa-regular");
-      icon.classList.toggle("fa-solid");
-      icon.classList.toggle("text-theme");
+      saveAllProducts(products);
+    
+      // if(product.liked = 'true'){
+      //     const likedProduct = allProducts.find(product => product.id === id);
+      //     wishlist.push(likedProduct);
+      //     console.log(wishlist);
+      // }
+      
+      if(product.liked){
+        icon.classList.remove('fa-regular');
+        icon.classList.add('fa-solid','text-theme');
+      } else{
+        icon.classList.remove('fa-solid','text-theme');
+        icon.classList.add('fa-regular');
+      }
     }
 
     if (type === "watch") {

@@ -1,12 +1,13 @@
-import { wishlist } from "./data.js";
+import {getWishlist } from "./data.js";
 const wishListContainer = document.getElementById('display-wishlist');
 
 export function renderWishlistPage(){
-    displayWishList(wishlist,wishListContainer);
+    displayWishList(wishListContainer);
 }
 
 
-function displayWishList(wishlist,wishListContainer){
+function displayWishList(wishListContainer){
+    const wishlist = getWishlist();
     wishlist.forEach((item)=>{
         wishListContainer.innerHTML += `
             <div class="group w-56 h-80 bg-transparent rounded flex-shrink-0">

@@ -1,11 +1,10 @@
-import {getFlashSales ,categories,getBestProducts,getProducts,wishlist,saveAllProducts,getAllProducts} from "./data.js";
+import {getFlashSales ,categories,getBestProducts,getProducts,saveAllProducts,getAllProducts,saveWishlist, allProducts, getWishlist} from "./data.js";
 const flashSalesImages = document.getElementById("flash-sales-images");
 const bestSellingImages = document.getElementById("best-selling-images");
 const categoriesContainer = document.getElementById("categories-container");
 const exploreProductsContainer = document.getElementById("explore-products-container");
 
 export function renderLandingPage() {
-  
   const flashSalesProducts = getFlashSales();
   displayImages(flashSalesImages,flashSalesProducts);
   updateIcons(flashSalesImages);
@@ -106,11 +105,14 @@ export function updateIcons(images) {
       product.liked = !product.liked;
       saveAllProducts(products);
     
-      // if(product.liked = 'true'){
-      //     const likedProduct = allProducts.find(product => product.id === id);
-      //     wishlist.push(likedProduct);
-      //     console.log(wishlist);
-      // }
+      if(product.liked = 'true'){
+          const allProducts = getAllProducts();
+          const wishlist = getWishlist();
+          const likedProduct = allProducts.find(product => product.id === id);
+          wishlist.push(likedProduct);
+          saveWishlist(wishlist);
+          console.log(wishlist);
+      }
       
       if(product.liked){
         icon.classList.remove('fa-regular');

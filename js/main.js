@@ -1,8 +1,15 @@
 import { renderLandingPage,showAddedCart } from "./landingPage.js";
+import { renderWishlistPage } from "./wishlist.js";
 
 if(document.body.classList.contains("landing-page")){
   renderLandingPage();
   showAddedCart();
+}
+
+
+if(document.body.classList.contains("wishlist")){
+  renderWishlistPage()
+
 }
 
 
@@ -25,3 +32,4 @@ function initNav(barId, linksId, containerId) {
 initNav("nav-bar-signup", "nav-signup", "nav-container-signup");
 initNav("nav-bar-login", "nav-login", "nav-container-login");
 initNav("nav-bar-landing", "nav-landing", "nav-container-landing");
+initNav("nav-bar-wishlist", "nav-wishlist", "nav-container-wishlist");

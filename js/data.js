@@ -215,7 +215,7 @@ export const exploreProducts = [
     price: 700,
     image: "../Images/products/product-7.png",
     ratingImage: "../Images/ratings/rating-5.png",
-    status: "old",
+    status: "new",
     liked: false,
     watched: false
   },
@@ -286,6 +286,59 @@ export const exploreProducts = [
     image: "../Images/products/product-8.png",
     ratingImage: "../Images/ratings/rating-4.png",
     status: "new",
+    liked: false,
+    watched: false
+  }
+];
+
+export const wishlist = [
+  {
+    id: 15,
+    name: "Mechanical Gaming Keyboard",
+    price: 150,
+    discount: 28,
+    image: "../Images/flash-sales/product-2.png",
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 23,
+    name: "ASUS FHD Gaming Laptop",
+    price: 700,
+    image: "../Images/products/product-7.png",
+    ratingImage: "../Images/ratings/rating-5.png",
+    status: "new",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 11,
+    name: "The north coat",
+    price: 360,
+    discount: 28,
+    image: "../Images/best-selling-products/product-1.png",
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 7,
+    name: "Canon DSLR Camera",
+    price: 850,
+    discount: 18,
+    image: "../Images/flash-sales/product-3.png",
+    ratingImage: "../Images/ratings/rating-4.5.png",
+    liked: false,
+    watched: false
+  },
+  {
+    id: 21,
+    name: "Breed Dry Dog Food",
+    price: 100,
+    image: "../Images/products/product-1.png",
+    ratingImage: "../Images/ratings/rating-3.png",
+    status: "old",
     liked: false,
     watched: false
   }

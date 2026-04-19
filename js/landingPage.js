@@ -1,4 +1,4 @@
-import { flashSalesProducts,categories,bestSellingProducts,exploreProducts } from "./data.js";
+import {getFlashSales ,categories,getBestProducts,getProducts } from "./data.js";
 const flashSalesImages = document.getElementById("flash-sales-images");
 const bestSellingImages = document.getElementById("best-selling-images");
 const categoriesContainer = document.getElementById("categories-container");
@@ -6,12 +6,13 @@ const exploreProductsContainer = document.getElementById("explore-products-conta
 
 export function renderLandingPage() {
   
+  const flashSalesProducts = getFlashSales();
   displayImages(flashSalesImages,flashSalesProducts);
   updateIcons(flashSalesImages, flashSalesProducts);
-
+  
+  const bestSellingProducts = getBestProducts();
   displayImages(bestSellingImages,bestSellingProducts);
   updateIcons(bestSellingImages,bestSellingProducts);
-
 
   categories.forEach((category)=>{
     categoriesContainer.innerHTML += `
@@ -23,7 +24,7 @@ export function renderLandingPage() {
       </div>
     `
   });
-  console.log(exploreProducts);
+  const exploreProducts = getProducts();
   displayImages(exploreProductsContainer,exploreProducts);
   updateIcons(exploreProductsContainer, exploreProducts);
 }
@@ -59,8 +60,8 @@ function displayImages(images,products){
                 data-type="watch"
                 data-watched="${item.watched}" data-id="${item.id}">
                 </i>
-              </div>
-              ${Object.hasOwn(item,"discount")
+              </div> 
+              ${item.discount > 0
                   ? `<div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>` 
                   : ""
                 }
@@ -68,7 +69,7 @@ function displayImages(images,products){
             </div>
             <div class="flex flex-col items-start justify-start rounded relative">
               <span class="font-medium text-sm">${item.name}</span>
-              ${Object.hasOwn(item,"discount")
+              ${item.discount > 0
                 ? `<div class="flex flex-row gap-2 mb-2">
                     <span class="text-base font text-theme">$${item.price - Math.round((item.discount / 100) * item.price)}</span>
                     <span class="text-base font text-gray-400 line-through">$${item.price}</span>

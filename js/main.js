@@ -1,7 +1,8 @@
-import { renderLandingPage } from "./landingPage.js";
+import { renderLandingPage,showAddedCart } from "./landingPage.js";
 
 if(document.body.classList.contains("landing-page")){
   renderLandingPage();
+  showAddedCart();
 }
 
 
@@ -19,7 +20,6 @@ function initNav(barId, linksId, containerId) {
     container.classList.toggle("h-32");
     container.classList.toggle("h-96");
   });
-  console.log(bar);
 }
 
 initNav("nav-bar-signup", "nav-signup", "nav-container-signup");

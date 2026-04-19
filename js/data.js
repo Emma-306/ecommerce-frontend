@@ -270,7 +270,7 @@ export const exploreProducts = [
     watched: false
   },
   {
-    id: 24,
+    id: 29,
     name: "Curology Product Set",
     price: 500,
     image: "../Images/products/product-4.png",
@@ -280,7 +280,7 @@ export const exploreProducts = [
     watched: false
   },
   {
-    id: 25,
+    id: 30,
     name: "Kids Electric Car",
     price: 960,
     image: "../Images/products/product-8.png",

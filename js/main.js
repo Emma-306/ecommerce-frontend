@@ -9,7 +9,7 @@ if(document.body.classList.contains("landing-page")){
 
 if(document.body.classList.contains("wishlist")){
   renderWishlistPage()
-
+  showAddedCart();
 }
 
 

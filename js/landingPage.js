@@ -89,7 +89,7 @@ function displayImages(images,products){
   });
 }
 
-function updateIcons(images,products) {
+export function updateIcons(images,products) {
   images.addEventListener("click", (e) => {
     const icon = e.target.closest("i");
     if (!icon) return;

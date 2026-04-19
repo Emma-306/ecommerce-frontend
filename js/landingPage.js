@@ -157,7 +157,6 @@ function displayProduct(products,images){
 export function showAddedCart(){
   const buttons = document.querySelectorAll('.js-add-to-cart');
   buttons.forEach((button)=>{
-    console.log(button);
     button.addEventListener('click',()=>{
       const productId = button.dataset.itemId;
       const addedText =  document.querySelector(`.added-to-cart-${productId}`);

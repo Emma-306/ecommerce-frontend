@@ -110,8 +110,8 @@ function displayRecommendedProducts(container){
           }
           <img src=${item.image} alt="" class="w-36 h-36">
           <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
-            <i class="fa-regular fa-trash-alt text-black"
-            data-type="trash"
+            <i class="fa-regular fa-eye text-black"
+            data-type="watch"
             data-id="${item.id}">
             </i>
           </div>

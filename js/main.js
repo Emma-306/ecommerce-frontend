@@ -33,3 +33,4 @@ initNav("nav-bar-signup", "nav-signup", "nav-container-signup");
 initNav("nav-bar-login", "nav-login", "nav-container-login");
 initNav("nav-bar-landing", "nav-landing", "nav-container-landing");
 initNav("nav-bar-wishlist", "nav-wishlist", "nav-container-wishlist");
+initNav("nav-bar-cart", "nav-cart", "nav-container-cart");

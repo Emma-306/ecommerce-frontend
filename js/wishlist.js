@@ -60,7 +60,6 @@ function displayWishList(wishListContainer){
 function removeWishItem(){
   wishListContainer.addEventListener('click', (e) => {
     const trashIcon = e.target.closest('[data-type="trash"]');
-    console.log(trashIcon);
     if (!trashIcon) return;
 
     const id = Number(trashIcon.dataset.id);

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body class="font-inter">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <header class="lg:fixed top-0 left-0 w-full z-50">
+      <div
+        class="flex flex-row h-16 md:h-12 bg-black text-white w-full items-center justify-center lg:justify-end lg:pr-48 font-normal text-sm p-4 relative"
+      >
+        <div class="flex flex-row">
+          <span
+            >Summer Sale For All Swim Suits And Free Express Delivery - OFF
+            50%!</span
+          >
+          <a href="#" class="ml-2 font-semibold underline">ShopNow</a>
+        </div>
+        <select
+          name="language"
+          id="language"
+          class="bg-black text-white ml-4 md:ml-20 top-1 md:top-3 outline-none lg:ml-56"
+        >
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+          <option value="fr">French</option>
+        </select>
+      </div>
+      <div
+        class="transition-all duration-300 flex flex-col lg:flex-row h-32 lg:h-16 items-center lg:items-end w-full bg-white py-4 lg:px-32 justify-center md:justify-center border-b-2 border-gray-300 shadow-md lg:gap-24 relative"
+        id="nav-container-cart"
+      >
+        <span class="font-bold text-2xl mb-3 lg:mb-0 xl:mr-52">Exclusive</span>
+        <button class="absolute left-2 top-5 lg:hidden" id="nav-bar-cart">
+          <i class="fa-solid fa-bars" style="color: rgb(11, 11, 11)"></i>
+        </button>
+
+        <nav
+          class="hidden flex-col w-full lg:flex lg:flex-row gap-8 lg:gap-12 font-normal text-base mt-4 mb-9 lg:mt-0 lg:mb-0 px-4 lg:px-0"
+          id="nav-cart"
+        >
+          <a href="landingPage.html" class="whitespace-nowrap">Home</a>
+          <a href="#" class="whitespace-nowrap">Contact</a>
+          <a href="#" class="whitespace-nowrap">About</a>
+          <a href="signUpPage.html" class="whitespace-nowrap">Sign Up</a>
+        </nav>
+        <div
+          class="w-full lg:w-96 flex flex-row gap-6 items-center justify-center"
+        >
+          <div class="relative w-60">
+            <input
+              type="text"
+              placeholder="What are you looking for?"
+              class="bg-gray-200 pl-4 pr-8 py-3 h-8 w-full lg:w-60 placeholder:text-sm rounded-lg"
+            />
+            <i
+              class="fa-solid fa-magnifying-glass"
+              style="
+                color: rgb(11, 11, 11);
+                position: absolute;
+                right: 1rem;
+                top: 50%;
+                transform: translateY(-50%);
+              "
+            ></i>
+          </div>
+          <div class="relative">
+            <a href="wishlist.html"><i class="fa-regular fa-heart" style="color: rgb(11, 11, 11)"></i></a>
+            <p class="text-white text-[10px] absolute -top-1 -right-2 p-1 w-4 h-4 rounded-full bg-theme flex justify-center items-center" id="wishlist-length">4</p>
+        </div>
+            <div class="relative">
+                <i class="fa-solid fa-cart-arrow-down" style="color: rgb(11, 11, 11)"></i>
+                <p class="text-white text-[10px] absolute -top-1 -right-2 p-1 w-4 h-4 rounded-full bg-theme flex justify-center items-center" id="cart-length">4</p>
+            </div>
+          <i
+            class="fa-solid fa-user rounded-full p-2"
+            style="color: rgb(11, 11, 11)"
+          ></i>
+        </div>
+      </div>
+    </header>
+    <div class="w-full h-16 lg:h-56 mt-10 lg:mt-4 lg:pt-40 mb-10 px-6 md:px-14 xl:px-36 flex justify-start items-start">
+        <span class="text-sm"><a href="landingPage.html" class="text-theme hover:underline hover:underline-offset-8">Home</a> / Cart</span>
+    </div>
+    <div class="w-full mb-10 px-6 md:px-14 xl:px-36 flex justify-start items-start">
+        <table class="w-full table-fixed border-collapse border border-gray-100 shadow-sm">
+            <thead>
+                <tr class="border border-collapse border-gray-100 shadow-sm">
+                    <th class="text-left w-2/5 px-6 py-4 font-normal text-base">Product</th>
+                    <th class="text-center w-1/5 p-4 font-normal text-base">Price</th>
+                    <th class="text-center w-1/5 p-4 font-normal text-base">Quantity</th>
+                    <th class="text-center w-1/5 p-4 font-normal text-base">Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border border-collapse border-gray-100 shadow-sm">
+                    <td class="text-left w-2/5 px-6 pt-16 pb-6 ">
+                        <div class="flex flex-row items-center gap-4 relative group">
+                            <img src="../Images/products/product-1.png" alt="Product Image" class="h-14 w-14 object-cover">
+                            <span class="font-normal text-base">Product Name</span>
+                            <span class="absolute -left-2 -top-2 bg-theme text-white rounded-full w-5 h-5 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer">x</span>
+                        </div>
+                    </td>
+                    <td class="text-center w-1/5 px-6 pt-16 pb-6 font-normal text-base">$50.00</td>
+                    <td class="text-center w-1/5 px-6 pt-16 pb-6 font-normal text-base">
+                        <input type="number" value="1" min="1" class="w-16 border-2 border-gray-400 rounded text-center">
+                    </td>
+                    <td class="text-center w-1/5 px-6 pt-16 pb-6 font-normal text-base">$50.00</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="w-full h-16 px-6 md:px-14 xl:px-36 flex justify-between items-center relative">
+        <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm">
+            <span class="font-medium text-sm">Return To Shop</span>
+        </div>
+        <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm">
+            <span class="font-medium text-sm">Update Cart</span>
+        </div>
+    </div>
+    <script src="../js/main.js" type="module"></script>
+</body>
+</html>

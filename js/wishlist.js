@@ -4,6 +4,7 @@ const wishListContainer = document.getElementById('display-wishlist');
 export function renderWishlistPage(){
     displayWishList(wishListContainer);
     removeWishItem();
+    updateWishlistLength();
 }
 
 
@@ -72,5 +73,18 @@ function removeWishItem(){
     saveWishlist(updatedWishlist);
     wishListContainer.innerHTML = "";
     renderWishlistPage();
+    updateWishlistLength();
   });
+}
+
+function updateWishlistLength(){
+  const wishlist = getWishlist();
+  const wishlistLengthElement = document.getElementById('wishlist-length');
+  if(wishlistLengthElement){
+    wishlistLengthElement.textContent = wishlist.length.toString();
+  }
+  const wishlistHeader = document.getElementById('wishlist-header');
+  if(wishlistHeader){
+    wishlistHeader.textContent = `Wishlist (${wishlist.length})`;
+  }
 }

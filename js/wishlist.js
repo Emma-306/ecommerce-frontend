@@ -33,7 +33,7 @@ function displayWishList(wishListContainer){
                   ? `<div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>` 
                   : ""
                 }
-              <div class="absolute left-0 right-0 bottom-0 bg-black h-9 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded-b js-add-to-cart" data-item-id="${item.id}"><p>Add To Cart</p></div>
+              <div class="absolute left-0 right-0 bottom-0 cursor-pointer bg-black h-9 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded-b js-add-to-cart" data-item-id="${item.id}"><p>Add To Cart</p></div>
             </div>
             <div class="flex flex-col items-start justify-start rounded relative">
               <span class="font-medium text-sm">${item.name}</span>
@@ -46,7 +46,7 @@ function displayWishList(wishListContainer){
                     <span class="text-base font text-theme">$${item.price}</span>
                   </div>`
               }
-              <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart cursor-pointer" >
+              <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart " >
                 <img src="../Images/icons/checkmark.png" class="h-5 w-5 mr-1">
                 <span class="text-base text-green-600 font-semibold">Added</span>
               </div>
@@ -119,7 +119,7 @@ function displayRecommendedProducts(container){
               ? `<div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>` 
               : ""
             }
-          <div class="absolute left-0 right-0 bottom-0 bg-black h-9 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded-b js-add-to-cart" data-item-id="${item.id}"><p>Add To Cart</p></div>
+          <div class="absolute left-0 right-0 bottom-0 cursor-pointer bg-black h-9 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 rounded-b js-add-to-cart" data-item-id="${item.id}"><p>Add To Cart</p></div>
         </div>
         <div class="flex flex-col items-start justify-start rounded relative">
           <span class="font-medium text-sm">${item.name}</span>
@@ -132,7 +132,7 @@ function displayRecommendedProducts(container){
                 <span class="text-base font text-theme">$${item.price}</span>
               </div>`
           }
-          <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart cursor-pointer" >
+          <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart " >
             <img src="../Images/icons/checkmark.png" class="h-5 w-5 mr-1">
             <span class="text-base text-green-600 font-semibold">Added</span>
           </div>

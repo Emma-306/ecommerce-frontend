@@ -55,11 +55,19 @@ function displayImages(images,products){
                 }
               </div>
               <div class="absolute right-2 top-12 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
-                <i class="fa-regular fa-eye text-black"
-                data-type="watch"
-                data-watched="${item.watched}" data-id="${item.id}">
-                </i>
-              </div> 
+                ${item.watched === false
+                  ? `<i 
+                      class="fa-regular fa-eye-slash text-black cursor-pointer"
+                      data-type="watch"
+                      data-watched="${item.watched}" data-id="${item.id}">
+                    </i>` 
+                  : `<i 
+                      class="fa-solid fa-eye text-black cursor-pointer"
+                      data-type="watch"
+                      data-watched="${item.watched}" data-id="${item.id}">
+                    </i>`
+                } 
+              </div>
               ${item.discount > 0
                   ? `<div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>` 
                   : ""

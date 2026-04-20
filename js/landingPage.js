@@ -104,14 +104,16 @@ export function updateIcons(images) {
     if (type === "like") {
       product.liked = !product.liked;
       saveAllProducts(products);
-    
-      if(product.liked = 'true'){
+      const wishlist = getWishlist();
+      if(product.liked === true){
           const allProducts = getAllProducts();
-          const wishlist = getWishlist();
           const likedProduct = allProducts.find(product => product.id === id);
           wishlist.push(likedProduct);
           saveWishlist(wishlist);
           console.log(wishlist);
+      } else{
+        const updatedWishlist = wishlist.filter(item => item.id !== id);
+        saveWishlist(updatedWishlist);
       }
       
       if(product.liked){

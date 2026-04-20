@@ -1,8 +1,9 @@
-import {getWishlist } from "./data.js";
+import {getWishlist,saveWishlist,getAllProducts,saveAllProducts} from "./data.js";
 const wishListContainer = document.getElementById('display-wishlist');
 
 export function renderWishlistPage(){
     displayWishList(wishListContainer);
+    removeWishItem();
 }
 
 
@@ -20,12 +21,12 @@ function displayWishList(wishListContainer){
               }
               <img src=${item.image} alt="" class="w-36 h-36">
               <div class="absolute right-2 top-2 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
-                <i class="fa-regular fa-eye text-black"
-                data-type="watch"
-                data-watched="${item.watched}" data-id="${item.id}">
+                <i class="fa-regular fa-trash-alt text-black"
+                data-type="trash"
+                data-id="${item.id}">
                 </i>
               </div>
-              ${Object.hasOwn(item,"discount")
+              ${item.discount > 0
                   ? `<div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>` 
                   : ""
                 }
@@ -33,7 +34,7 @@ function displayWishList(wishListContainer){
             </div>
             <div class="flex flex-col items-start justify-start rounded relative">
               <span class="font-medium text-sm">${item.name}</span>
-              ${Object.hasOwn(item,"discount")
+              ${item.discount > 0
                 ? `<div class="flex flex-row gap-2 mb-2">
                     <span class="text-base font text-theme">$${item.price - Math.round((item.discount / 100) * item.price)}</span>
                     <span class="text-base font text-gray-400 line-through">$${item.price}</span>
@@ -51,4 +52,25 @@ function displayWishList(wishListContainer){
         </div>
         `;
     });
+}
+
+function removeWishItem(){
+  wishListContainer.addEventListener('click', (e) => {
+    const trashIcon = e.target.closest('[data-type="trash"]');
+    console.log(trashIcon);
+    if (!trashIcon) return;
+
+    const id = Number(trashIcon.dataset.id);
+    const wishlist = getWishlist();
+    const updatedWishlist = wishlist.filter(item => item.id !== id);
+    const allProducts = getAllProducts();
+    const product = allProducts.find(product => product.id === id);
+    if(product){
+      product.liked = false;
+      saveAllProducts(allProducts);
+    }
+    saveWishlist(updatedWishlist);
+    wishListContainer.innerHTML = "";
+    renderWishlistPage();
+  });
 }

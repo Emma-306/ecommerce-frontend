@@ -85,7 +85,7 @@
                 <p class="text-white text-[10px] absolute -top-1 -right-2 p-1 w-4 h-4 rounded-full bg-theme flex justify-center items-center" id="cart-length">4</p>
             </div>
           <i
-            class="fa-solid fa-user rounded-full p-2"
+            class="fa-solid fa-user"
             style="color: rgb(11, 11, 11)"
           ></i>
         </div>
@@ -122,7 +122,7 @@
             </tbody>
         </table>
     </div>
-    <div class="w-full h-16 px-6 md:px-14 xl:px-36 flex justify-between items-center relative">
+    <div class="w-full h-16 px-6 md:px-14 xl:px-36 flex justify-between items-center relative mb-10">
         <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm">
             <span class="font-medium text-sm">Return To Shop</span>
         </div>
@@ -130,6 +130,111 @@
             <span class="font-medium text-sm">Update Cart</span>
         </div>
     </div>
+    <div class="w-full mb-28 px-6 md:px-14 xl:px-36 flex flex-col lg:flex-row justify-start items-start">
+        <div class="w-1/2 h-36 lg:h-20 items-start justify-start flex flex-col lg:flex-row gap-2">
+            <input type="text" placeholder="Coupon Code" class=" border border-gray-900 pl-4 pr-8 py-3 h-12 w-64 placeholder:text-sm rounded">
+            <div class="w-48 h-12 bg-theme flex items-center justify-center rounded">
+                <span class="font-medium text-sm text-white">Apply Coupon</span>
+            </div>
+        </div>
+        <div class=" w-full lg:w-1/2 h-full flex flex-col items-start lg:items-end justify-center ">
+            <div class="w-3/4 h-3/4 bg-white p-6 flex flex-col items-start justify-start border-2 border-gray-800 rounded">
+                <span class="font-medium text-xl">Cart Total</span>
+                <div class="flex flex-row items-center justify-between w-full mt-4 border-b-2 border-gray-300 pb-4">
+                    <span class="font-normal text-base">Subtotal</span>
+                    <span class="font-normal text-base">$50.00</span>
+                </div>
+                <div class="flex flex-row items-center justify-between w-full mt-4 border-b-2 border-gray-300 pb-4">
+                    <span class="font-normal text-base">Shipping</span>
+                    <span class="font-normal text-base">Free</span>
+                </div>
+                <div class="flex flex-row items-center justify-between w-full mt-4">
+                    <span class="font-normal text-base">Total</span>
+                    <span class="font-normal text-base">$50.00</span>
+                </div>
+                <div class="flex items-center justify-center h-10 w-full mt-6">
+                    <div class="w-1/2 h-full bg-theme flex items-center justify-center rounded">
+                        <span class="font-medium text-sm text-white text-center">Proceed To Checkout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer
+      class="bg-black text-white w-full h-[1200px] md:gap-6 lg:h-[350px] px-6 md:px-14 xl:px-36 py-8 lg:py-16 flex lg:flex-row flex-col justify-between items-start gap-8 relative"
+    >
+      <div class="flex flex-col w-[217px]">
+        <span class="font-bold text-2xl mb-4">Exclusive</span>
+        <span class="mb-4 text-xl font-medium">Subscribe</span>
+        <span class="mb-2 text-sm">Get 10% off your first order</span>
+        <input
+          type="text"
+          placeholder="Enter your email"
+          class="border border-white bg-transparent py-3 px-2 w-48 rounded-sm"
+        />
+      </div>
+      <div class="flex flex-col w-[175px]">
+        <span class="mb-4 text-xl font-medium">Support</span>
+        <span class="mb-3 text-sm"
+          >111 Bijoy sarani, Dhaka, DH 1515, Bangladesh</span
+        >
+        <span class="mb-3 text-sm">exclusive@gmail.com</span>
+        <span class="mb-3 text-sm">+88015-88888-9999</span>
+      </div>
+      <div class="flex flex-col w-[123px]">
+        <span class="mb-4 text-xl font-medium">Account</span>
+        <span class="mb-3 text-sm"
+          >My Account</span
+        >
+        <span class="mb-3 text-sm">Login / Register</span>
+        <span class="mb-3 text-sm">Cart</span>
+        <span class="mb-3 text-sm">Wishlist</span>
+        <span class="mb-3 text-sm">Shop</span>
+      </div>
+
+      <div class="flex flex-col w-[123px]">
+        <span class="mb-4 text-xl font-medium">Quick Link</span>
+        <span class="mb-3 text-sm">Privacy Policy</span>
+        <span class="mb-3 text-sm">Terms Of Use</span>
+        <span class="mb-3 text-sm">FAQ</span>
+        <span class="mb-3 text-sm">Contact</span>
+      </div>
+      <div class="flex flex-col w-[210px]">
+        <span class="mb-4 text-xl font-medium">Download App</span>
+        <span class="mb-2 text-xs">Save $3 with App New User Only</span>
+        <div class="grid grid-cols-4 grid-rows-4 h-24 gap-2 w-full">
+           <div class="bg-red-500 col-span-2 row-span-4 rounded-sm">
+            <img src="../Images/Qrcode-1.png" alt="Qrcode" class="w-full h-full object-cover rounded-sm">
+           </div>
+           <div class="col-span-2 row-span-2 rounded-sm p-1 border border-white flex flex-row items-center">
+            <i class="mr-1 fa-brands fa-google-play" style="color: rgb(255,255, 255);"></i>
+            <div class="flex flex-col">
+              <span class="uppercase text-[10px]">Get it on</span>
+              <span class="text-xs font-semibold">Google Play</span>
+            </div>
+           </div>
+           <div class="col-span-2 row-span-2 rounded-sm p-1 border border-white flex flex-row items-center">
+              <i class="mr-1 fa-brands fa-apple" style="color: rgb(255, 255, 255);"></i>
+              <div class="flex flex-col">
+                <span class="uppercase text-[10px]">Get it on</span>
+                <span class="text-xs font-semibold">App Store</span>
+              </div>
+           </div>
+        </div>
+        <div class="flex flex-row justify-start p-4 gap-8 mt-4">
+          <button><i class="fa-brands fa-facebook-f" style="color: rgb(255, 255, 255);"></i></button>
+          <button><i class="fa-brands fa-twitter" style="color: rgb(255, 255, 255);"></i></button>
+          <button><i class="fa-brands fa-instagram" style="color: rgb(255, 255, 255);"></i></button>
+          <button><i class="fa-brands fa-linkedin-in" style="color: rgb(255, 255, 255);"></i></button>
+        </div>
+      </div>
+      <div class="absolute bottom-4 left-0 right-0 flex items-center justify-center">
+        <span class="text-sm text-gray-300">&copy Copyright Rimel 2022. All right reserved</span>
+      </div>
+    </footer>
+
+
+
     <script src="../js/main.js" type="module"></script>
 </body>
 </html>

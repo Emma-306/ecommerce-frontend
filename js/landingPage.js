@@ -31,7 +31,7 @@ export function renderLandingPage() {
 function displayImages(images,products){
   products.forEach((item) => {
     images.innerHTML += `
-        <div class="group w-56 h-80 bg-transparent rounded flex-shrink-0">
+        <div class="group w-56 h-80 bg-transparent rounded flex-shrink-0 product-card" data-product-id="${item.id}">
             <div class="flex items-center justify-center p-3 bg-gray-200 rounded relative h-56 mb-2">
               ${item?.status === "new" 
                 ? `<div class="absolute top-2 left-2 px-2 py-1 bg-mygreen text-white rounded-md text-sm">
@@ -79,7 +79,7 @@ function displayImages(images,products){
                   </div>`
               }
               <img src=${item.ratingImage} alt="" class="h-5">
-              <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart-${item.id}" >
+              <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart" >
                 <img src="../Images/icons/checkmark.png" class="h-5 w-5 mr-1">
                 <span class="text-base text-green-600 font-semibold">Added</span>
               </div>
@@ -127,15 +127,23 @@ export function updateIcons(images) {
     }
   });
 }
-export function showAddedCart(){
+
+export function showAddedCart() {
   const buttons = document.querySelectorAll('.js-add-to-cart');
-  buttons.forEach((button)=>{
-    button.addEventListener('click',()=>{
-      const productId = button.dataset.itemId;
-      const addedText =  document.querySelector(`.added-to-cart-${productId}`);
-      console.log(addedText);
+
+  buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const productCard = button.closest('.product-card');
+
+      if (!productCard) return;
+
+      const addedText = productCard.querySelector('.added-to-cart');
+
+      if (!addedText) return;
+
       addedText.classList.remove('opacity-0');
-      setTimeout(()=>{
+
+      setTimeout(() => {
         addedText.classList.add('opacity-0');
       }, 1000);
     });

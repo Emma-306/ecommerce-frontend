@@ -55,18 +55,11 @@ function displayImages(images,products){
                 }
               </div>
               <div class="absolute right-2 top-12 bg-white h-8 w-8 rounded-full flex items-center justify-center cursor-pointer">
-                ${item.watched === false
-                  ? `<i 
-                      class="fa-regular fa-eye-slash text-black cursor-pointer"
-                      data-type="watch"
-                      data-watched="${item.watched}" data-id="${item.id}">
-                    </i>` 
-                  : `<i 
-                      class="fa-solid fa-eye text-black cursor-pointer"
-                      data-type="watch"
-                      data-watched="${item.watched}" data-id="${item.id}">
-                    </i>`
-                } 
+                <i 
+                  class="fa-regular fa-eye text-black cursor-pointer"
+                  data-type="watch"
+                  data-id="${item.id}">
+                </i>
               </div>
               ${item.discount > 0
                   ? `<div class="absolute top-2 left-2 px-2 py-1 bg-theme text-white rounded-md text-sm">-${item.discount}%</div>` 
@@ -131,13 +124,6 @@ export function updateIcons(images) {
         icon.classList.remove('fa-solid','text-theme');
         icon.classList.add('fa-regular');
       }
-    }
-
-    if (type === "watch") {
-      product.watched = !product.watched;
-
-      icon.classList.toggle("fa-eye");
-      icon.classList.toggle("fa-eye-slash");
     }
   });
 }

@@ -44,7 +44,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -56,7 +55,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -68,7 +66,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -80,7 +77,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -92,7 +88,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -104,7 +99,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -116,7 +110,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -128,7 +121,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -140,7 +132,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -152,7 +143,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "flashsales"
   },
   {
@@ -164,7 +154,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "best selling products"
   },
   {
@@ -176,7 +165,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "best selling products"
   },
   {
@@ -188,7 +176,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "best selling products"
   },
   {
@@ -200,7 +187,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "best selling products"
   },
   {
@@ -212,7 +198,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "best selling products"
   },
   {
@@ -224,7 +209,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-3.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -236,7 +220,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -248,7 +231,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-5.png",
     status: "new",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -260,7 +242,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -272,7 +253,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "new",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -284,7 +264,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-5.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -296,7 +275,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "new",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -308,7 +286,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -320,7 +297,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "old",
     liked: false,
-    watched: false,
     category: "products"
   },
   {
@@ -332,7 +308,6 @@ export const allProducts = [
     ratingImage: "../Images/ratings/rating-4.png",
     status: "new",
     liked: false,
-    watched: false,
     category: "products"
   }
 ];

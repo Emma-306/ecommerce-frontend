@@ -79,7 +79,7 @@ function displayImages(images,products){
                   </div>`
               }
               <img src=${item.ratingImage} alt="" class="h-5">
-              <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart" >
+              <div class="absolute bottom-0 right-1 flex flex-row items-center justify-center opacity-0 transition-all duration-300 added-to-cart cursor-pointer" >
                 <img src="../Images/icons/checkmark.png" class="h-5 w-5 mr-1">
                 <span class="text-base text-green-600 font-semibold">Added</span>
               </div>

@@ -32,7 +32,6 @@ export const categories = [
 
 ];
 
-export const wishlist = [];
 
 export const allProducts = [
   {
@@ -392,5 +391,33 @@ export function getWishlist(){
   } catch (error){
     console.error('Error retrieving products: ',error);
     return;
+  }
+}
+
+export function getCart(){
+  try {
+    const savedCart = localStorage.getItem('mycart');
+
+    if(savedCart === null){
+      console.log("No cart found In localStorage");
+      return [];
+    }
+    const cart = JSON.parse(savedCart);
+    console.log(`Retrieved ${cart.length} cart from localStorage`);
+    return cart;
+  } catch (error){
+    console.error('Error retrieving products: ',error);
+    return;
+  }
+}
+
+export function saveCart(products){
+  try{
+    localStorage.setItem('mycart',JSON.stringify(products));
+    console.log('Cart saved sucessfully to localStorage');
+    return true;
+  } catch (error){
+    console.log('Error saving cart',error);
+    return false;
   }
 }

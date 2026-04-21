@@ -1,3 +1,4 @@
+import { setupCartPage } from "./cart.js";
 import { renderLandingPage,showAddedCart } from "./landingPage.js";
 import { renderWishlistPage } from "./wishlist.js";
 
@@ -12,6 +13,9 @@ if(document.body.classList.contains("wishlist")){
   showAddedCart();
 }
 
+if(document.body.classList.contains("cart")){
+  setupCartPage();
+}
 
 function initNav(barId, linksId, containerId) {
   const bar = document.getElementById(barId);

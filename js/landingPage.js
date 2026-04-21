@@ -1,4 +1,4 @@
-import {getFlashSales ,categories,getBestProducts,getProducts,saveAllProducts,getAllProducts,saveWishlist, allProducts, getWishlist} from "./data.js";
+import {getFlashSales ,categories,getBestProducts,getProducts,saveAllProducts,getAllProducts,saveWishlist, allProducts, getWishlist,saveCart,getCart} from "./data.js";
 const flashSalesImages = document.getElementById("flash-sales-images");
 const bestSellingImages = document.getElementById("best-selling-images");
 const categoriesContainer = document.getElementById("categories-container");
@@ -137,6 +137,13 @@ export function showAddedCart() {
 
       if (!productCard) return;
 
+      const productId = productCard.dataset.productId;
+      const products = getAllProducts();
+      const product = products.find(p => p.id === Number(productId));
+      if(!product) return;
+
+      addToCart(product);
+
       const addedText = productCard.querySelector('.added-to-cart');
 
       if (!addedText) return;
@@ -148,4 +155,25 @@ export function showAddedCart() {
       }, 1000);
     });
   });
+}
+
+function addToCart(product) {
+  const cart = getCart();
+  const existingProduct = cart.find(item => item.id === product.id);
+
+  if (existingProduct) {
+    existingProduct.quantity += 1;
+  } else {
+      cart.push({
+        id: product.id,
+        quantity: 1,
+        image: product.image,
+        name: product.name,
+        price: product.price,
+        discount: product.discount
+    });
+  }
+
+  saveCart(cart);
+  console.log(cart);
 }

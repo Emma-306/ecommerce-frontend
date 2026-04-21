@@ -1,6 +1,9 @@
 import { getWishlist, getCart, saveCart } from "./data.js";
 
 const cartItemsContainer = document.getElementById("cart-items");
+const subTotalSum = document.getElementById("subtotal-sum");
+const shippingFee = document.getElementById("shipping-fee");
+const shippingPrice = document.getElementById("total");
 
 const updatecartButton = document.getElementById("update-cart-button");
 
@@ -11,6 +14,7 @@ export function setupCartPage() {
   enableQuantityEdit();
   enableEnterUpdate();
   enableRemoveItem();
+  updatesummary();
 
   updatecartButton.addEventListener(
     "click",
@@ -117,6 +121,7 @@ function enableEnterUpdate() {
     input.addEventListener("keydown",(e) => {
         if (e.key === "Enter") {
           updateCartFromInputs();
+          updatesummary();
         }
       }
     );
@@ -152,6 +157,7 @@ function updateCartFromInputs() {
   });
   saveCart(cart);
   console.log("Cart Updated:", cart);
+  updatesummary();
 }
 
 function enableRemoveItem() {
@@ -166,6 +172,34 @@ function enableRemoveItem() {
     saveCart(cart);
     updateCartLength();
     getCartItems();
-
+    updatesummary();
   });
+}
+
+function updatesummary() {
+  const cart = getCart();
+  let subtotal = 0;
+  cart.forEach((item) => {
+    const discountedPrice = getDiscountedPrice(item);
+    subtotal += discountedPrice * item.quantity;
+  });
+  const shipping = getShippingFee(subtotal);
+  subTotalSum.textContent = `${Math.round(subtotal)}`;
+  shippingFee.textContent = shipping;
+  shippingPrice.textContent = `${Math.round(subtotal) + (shipping === "Free" ? 0 : shipping)}`;
+  if (cart.length === 0) {
+    subTotalSum.textContent = "0.00";
+    shippingPrice.textContent = "0.00";
+  }
+
+}
+
+function getShippingFee(cartTotal) {
+
+  if (cartTotal >= 100) {
+    return "Free"; 
+  }
+
+  return 10; 
+
 }

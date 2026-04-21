@@ -109,11 +109,13 @@
         </table>
     </div>
     <div class="w-full h-16 px-6 md:px-14 xl:px-36 flex justify-between items-center relative mb-10">
-        <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm">
-            <a href="landingPage.html"><span class="font-medium text-sm">Return To Shop</span></a>
-        </div>
-        <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm">
-            <span class="font-medium text-sm cursor-pointer" id="update-cart-button">Update Cart</span>
+        <a href="landingPage.html">
+          <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm cursor-pointer">
+            <span class="font-medium text-sm">Return To Shop</span>
+          </div>
+        </a>
+        <div class="flex items-center justify-center right-0 top-0 bg-white h-10 w-44 border-2 border-gray-400 rounded-sm cursor-pointer">
+            <span class="font-medium text-sm " id="update-cart-button">Update Cart</span>
         </div>
     </div>
     <div class="w-full mb-28 px-6 md:px-14 xl:px-36 flex flex-col lg:flex-row justify-start items-start">
@@ -127,21 +129,23 @@
             <div class="w-3/4 h-3/4 bg-white p-6 flex flex-col items-start justify-start border-2 border-gray-800 rounded">
                 <span class="font-medium text-xl">Cart Total</span>
                 <div class="flex flex-row items-center justify-between w-full mt-4 border-b-2 border-gray-300 pb-4">
-                    <span class="font-normal text-base">Subtotal</span>
-                    <span class="font-normal text-base">$50.00</span>
+                    <span class="font-normal text-base " >Subtotal</span>
+                    <span class="font-normal text-base" id="subtotal-sum">$50.00</span>
                 </div>
                 <div class="flex flex-row items-center justify-between w-full mt-4 border-b-2 border-gray-300 pb-4">
                     <span class="font-normal text-base">Shipping</span>
-                    <span class="font-normal text-base">Free</span>
+                    <span class="font-normal text-base" id="shipping-fee">Free</span>
                 </div>
                 <div class="flex flex-row items-center justify-between w-full mt-4">
-                    <span class="font-normal text-base">Total</span>
-                    <span class="font-normal text-base">$50.00</span>
+                    <span class="font-normal text-base" >Total</span>
+                    <span class="font-normal text-base" id="total">$50.00</span>
                 </div>
                 <div class="flex items-center justify-center h-10 w-full mt-6">
-                    <div class="w-1/2 h-full bg-theme flex items-center justify-center rounded">
-                        <span class="font-medium text-sm text-white text-center">Proceed To Checkout</span>
-                    </div>
+                    <a href="checkout.html" class=" w-full h-full justify-center items-center flex">
+                        <div class="w-1/2 h-full bg-theme flex items-center justify-center rounded cursor-pointer">
+                            <span class="font-medium text-sm text-white text-center ">Proceed To Checkout</span>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

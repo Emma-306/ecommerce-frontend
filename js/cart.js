@@ -58,7 +58,7 @@ function getCartItems() {
                  data-product-id="${item.id}"
                  class="w-16 border-2 border-gray-400 
                         rounded text-center hidden">
-          <span class="quantity-display cursor-pointer"
+          <span class="quantity-display"
                 data-product-id="${item.id}">
             ${item.quantity}
           </span>

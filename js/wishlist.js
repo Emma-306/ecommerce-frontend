@@ -97,6 +97,7 @@ function getRecommendedProducts(){
 
 function displayRecommendedProducts(container){
   const recommendedProducts = getRecommendedProducts();
+  container.innerHTML =""
   recommendedProducts.forEach((item)=>{
     container.innerHTML += `
         <div class="group w-56 h-80 bg-transparent rounded flex-shrink-0 product-card" data-product-id="${item.id}">

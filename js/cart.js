@@ -1,35 +1,18 @@
 import { getWishlist, getCart, saveCart } from "./data.js";
 
-const cartItemsContainer =
-  document.getElementById("cart-items");
-
-const subTotalSum =
-  document.getElementById("subtotal-sum");
-
-const shippingFee =
-  document.getElementById("shipping-fee");
-
-const shippingPrice =
-  document.getElementById("total");
-
-const updatecartButton =
-  document.getElementById("update-cart-button");
+const cartItemsContainer =document.getElementById("cart-items");
+const subTotalSum = document.getElementById("subtotal-sum");
+const shippingFee = document.getElementById("shipping-fee");
+const shippingPrice =document.getElementById("total");
+const updatecartButton = document.getElementById("update-cart-button");
 
 export function setupCartPage() {
-
   updateCartLength();
-
   getCartItems();
-
-  enableQuantityEdit();
   enableEnterUpdate();
   enableRemoveItem();
-
-  // ✅ ONLY NEW ADDITION (UPDATE FEATURE)
   enableUpdateToggle();
-
   updatesummary();
-
   updatecartButton.addEventListener(
     "click",
     updateCartFromInputs
@@ -37,38 +20,22 @@ export function setupCartPage() {
 
 }
 
-//
-// =====================
-// RENDER CART ITEMS
-// =====================
-//
 function getCartItems() {
-
   const cart = getCart();
-
   cartItemsContainer.innerHTML = "";
-
   cart.forEach((item) => {
-
-    const discountedPrice =
-      Math.round(getDiscountedPrice(item));
-
-    const subtotal =
-      Math.round(discountedPrice * item.quantity);
+    const discountedPrice = Math.round(getDiscountedPrice(item));
+    const subtotal = Math.round(discountedPrice * item.quantity);
 
     cartItemsContainer.innerHTML += `
       <tr class="border border-collapse border-gray-100 shadow-sm">
-
         <td class="text-left w-2/5 px-6 pt-16 pb-6 ">
           <div class="flex flex-row items-center gap-4 relative group">
-
             <img src="${item.image}"
                  class="h-14 w-14 object-cover">
-
             <span class="font-normal text-base">
               ${item.name}
             </span>
-
             <span class="absolute -left-2 -top-2 
                          bg-theme text-white rounded-full 
                          w-5 h-5 flex items-center 
@@ -78,17 +45,12 @@ function getCartItems() {
                          id="remove-${item.id}">
               x
             </span>
-
           </div>
         </td>
-
         <td class="text-center w-1/5 px-6 pt-16 pb-6 font-normal text-base">
           $${discountedPrice}
         </td>
-
-        <!-- ✅ UPDATED QUANTITY UI -->
         <td class="text-center w-1/5 px-6 pt-16 pb-6 font-normal text-base">
-
           <input type="number"
                  value="${item.quantity}"
                  min="1"
@@ -96,138 +58,74 @@ function getCartItems() {
                  data-product-id="${item.id}"
                  class="w-16 border-2 border-gray-400 
                         rounded text-center hidden">
-
           <span class="quantity-display cursor-pointer"
                 data-product-id="${item.id}">
             ${item.quantity}
           </span>
-
           <span class="update-toggle text-theme text-sm cursor-pointer ml-2"
                 data-product-id="${item.id}">
             Update
           </span>
-
         </td>
-
         <td class="text-center w-1/5 px-6 pt-16 pb-6 font-normal text-base subtotal">
           $${subtotal}
         </td>
-
       </tr>
     `;
   });
 }
 
-//
-// =====================
-// UPDATE TOGGLE SYSTEM (NEW)
-// =====================
-//
 function enableUpdateToggle() {
 
-  const buttons =
-    document.querySelectorAll(".update-toggle");
-
+  const buttons = document.querySelectorAll(".update-toggle");
   buttons.forEach((btn) => {
-
     btn.addEventListener("click", () => {
-
-      const productId =
-        Number(btn.dataset.productId);
-
-      const display =
-        document.querySelector(
-          `.quantity-display[data-product-id="${productId}"]`
-        );
-
-      const input =
-        document.querySelector(
-          `input[data-product-id="${productId}"]`
-        );
-
+      const productId = Number(btn.dataset.productId);
+      const display = document.querySelector(`.quantity-display[data-product-id="${productId}"]`);
+      const input = document.querySelector( `input[data-product-id="${productId}"]`);
       const cart = getCart();
+      const index = cart.findIndex(item => item.id === productId);
+      const isEditing = !input.classList.contains("hidden");
 
-      const index =
-        cart.findIndex(item => item.id === productId);
-
-      const isEditing =
-        !input.classList.contains("hidden");
-
-      // =====================
-      // ENTER EDIT MODE
-      // =====================
       if (!isEditing) {
-
         display.classList.add("hidden");
         input.classList.remove("hidden");
-
         btn.textContent = "Save";
-
         input.focus();
-
       }
-
-      // =====================
-      // SAVE MODE
-      // =====================
       else {
-
-        let newQuantity =
-          Number(input.value);
-
-        if (newQuantity < 1 || isNaN(newQuantity)) {
+        let newQuantity = Number(input.value);
+        if (newQuantity < 1 || isNaN(newQuantity) || newQuantity > 99) {
           newQuantity = 1;
         }
-
         if (index !== -1) {
           cart[index].quantity = newQuantity;
         }
-
         saveCart(cart);
-
         display.textContent = newQuantity;
-
         input.classList.add("hidden");
         display.classList.remove("hidden");
-
         btn.textContent = "Update";
 
-        // update row subtotal
-        const row =
-          input.closest("tr");
+        const row = input.closest("tr");
+        const subtotalCell = row.querySelector(".subtotal");
+        const price = getDiscountedPrice(cart[index]);
 
-        const subtotalCell =
-          row.querySelector(".subtotal");
-
-        const price =
-          getDiscountedPrice(cart[index]);
-
-        subtotalCell.textContent =
-          `$${Math.round(price * newQuantity)}`;
+        subtotalCell.textContent = `$${Math.round(price * newQuantity)}`;
 
         updatesummary();
         updateCartLength();
 
       }
-
     });
-
   });
-
 }
-
-//
-// =====================
-// YOUR EXISTING FUNCTIONS (UNCHANGED)
-// =====================
-//
 
 function updateCartLength() {
   const wishlist = getWishlist();
   const cart = getCart();
 
-  const wishlistLengthElement =
-    document.getElementById("wishlist-length");
+  const wishlistLengthElement = document.getElementById("wishlist-length");
 
   if (wishlistLengthElement) {
     wishlistLengthElement.textContent =
@@ -244,7 +142,6 @@ function updateCartLength() {
 }
 
 function getDiscountedPrice(product) {
-
   if (product.discount === 0) {
     return product.price;
   }
@@ -255,168 +152,89 @@ function getDiscountedPrice(product) {
   return product.price - discountAmount;
 }
 
-function enableQuantityEdit() {
-
-  const displays =
-    document.querySelectorAll(".quantity-display");
-
-  displays.forEach((display) => {
-
-    display.addEventListener("click", () => {
-
-      const productId =
-        display.dataset.productId;
-
-      const input =
-        document.querySelector(
-          `input[data-product-id="${productId}"]`
-        );
-
-      display.classList.add("hidden");
-      input.classList.remove("hidden");
-      input.focus();
-
-    });
-
-  });
-
-}
-
 function enableEnterUpdate() {
 
-  const inputs =
-    document.querySelectorAll('input[type="number"]');
+  const inputs = document.querySelectorAll('input[type="number"]');
 
   inputs.forEach((input) => {
-
     input.addEventListener("keydown", (e) => {
 
       if (e.key === "Enter") {
         updateCartFromInputs();
         updatesummary();
       }
-
     });
-
   });
-
 }
 
 function updateCartFromInputs() {
 
-  const inputs =
-    document.querySelectorAll('input[type="number"]');
-
+  const inputs = document.querySelectorAll('input[type="number"]');
   const cart = getCart();
 
   inputs.forEach((input) => {
 
-    const productId =
-      Number(input.dataset.productId);
+    const productId = Number(input.dataset.productId);
 
-    let newQuantity =
-      Number(input.value);
+    let newQuantity = Number(input.value);
 
     if (newQuantity < 1 || isNaN(newQuantity) || newQuantity > 99) {
       newQuantity = 1;
     }
-
-    const productIndex =
-      cart.findIndex(item => item.id === productId);
+    const productIndex = cart.findIndex(item => item.id === productId);
 
     if (productIndex !== -1) {
-
       cart[productIndex].quantity = newQuantity;
 
-      const display =
-        document.querySelector(
-          `.quantity-display[data-product-id="${productId}"]`
-        );
-
+      const display = document.querySelector(`.quantity-display[data-product-id="${productId}"]`);
+      
       display.textContent = newQuantity;
-
       display.classList.remove("hidden");
-
       input.classList.add("hidden");
 
       const row = input.closest("tr");
-
-      const subtotalCell =
-        row.querySelector(".subtotal");
-
-      const itemPrice =
-        getDiscountedPrice(cart[productIndex]);
+      const subtotalCell = row.querySelector(".subtotal");
+      const itemPrice = getDiscountedPrice(cart[productIndex]);
 
       subtotalCell.textContent =
         `$${Math.round(itemPrice * newQuantity)}`;
     }
-
   });
-
   saveCart(cart);
-
   updatesummary();
 }
 
-//
-// =====================
-// REMOVE (UNCHANGED)
-// =====================
-//
 function enableRemoveItem() {
-
   cartItemsContainer.addEventListener("click", (e) => {
-
-    const button =
-      e.target.closest('[id^="remove-"]');
+    const button = e.target.closest('[id^="remove-"]');
 
     if (!button) return;
-
-    const productId =
-      Number(button.id.replace("remove-", ""));
-
+    
+    const productId = Number(button.id.replace("remove-", ""));
+    
     let cart = getCart();
-
     cart = cart.filter(item => item.id !== productId);
 
     saveCart(cart);
-
     updateCartLength();
-
     getCartItems();
-
     updatesummary();
-
   });
-
 }
 
 function updatesummary() {
-
   const cart = getCart();
-
   let subtotal = 0;
-
   cart.forEach((item) => {
-
-    const discountedPrice =
-      getDiscountedPrice(item);
-
+    const discountedPrice = getDiscountedPrice(item);
     subtotal += discountedPrice * item.quantity;
-
   });
 
-  const shipping =
-    getShippingFee(subtotal);
+  const shipping = getShippingFee(subtotal);
 
-  subTotalSum.textContent =
-    `${Math.round(subtotal)}`;
-
-  shippingFee.textContent =
-    shipping;
-
-  shippingPrice.textContent =
-    `${Math.round(subtotal) + (shipping === "Free" ? 0 : shipping)}`;
+  subTotalSum.textContent =`${Math.round(subtotal)}`;
+  shippingFee.textContent = shipping;
+  shippingPrice.textContent = `${Math.round(subtotal) + (shipping === "Free" ? 0 : shipping)}`;
 
   if (cart.length === 0) {
     subTotalSum.textContent = "0.00";
@@ -425,10 +243,8 @@ function updatesummary() {
 }
 
 function getShippingFee(cartTotal) {
-
   if (cartTotal >= 100) {
     return "Free";
   }
-
   return 10;
 }

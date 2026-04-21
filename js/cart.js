@@ -10,6 +10,7 @@ export function setupCartPage() {
   getCartItems();
   enableQuantityEdit();
   enableEnterUpdate();
+  enableRemoveItem();
 
   updatecartButton.addEventListener(
     "click",
@@ -41,7 +42,7 @@ function getCartItems() {
                          justify-center text-xs 
                          opacity-0 group-hover:opacity-100 
                          transition-opacity duration-300 
-                         cursor-pointer">
+                         cursor-pointer remove-btn" id="remove-${item.id}">
               x
             </span>
           </div>
@@ -53,10 +54,11 @@ function getCartItems() {
           <input type="number"
                  value="${item.quantity}"
                  min="1"
+                 max="99"
                  data-product-id="${item.id}"
                  class="w-16 border-2 border-gray-400 
                         rounded text-center hidden">
-          <span class="quantity-display"
+          <span class="quantity-display cursor-pointer"
                 data-product-id="${item.id}">
                 ${item.quantity}
           </span>
@@ -128,7 +130,7 @@ function updateCartFromInputs() {
     const productId = Number(input.dataset.productId);
     let newQuantity = Number(input.value);
 
-    if (newQuantity < 1 || isNaN(newQuantity)) {
+    if (newQuantity < 1 || isNaN(newQuantity) || newQuantity > 99) {
       newQuantity = 1;
     }
 
@@ -136,7 +138,7 @@ function updateCartFromInputs() {
 
     if (productIndex !== -1) {
       cart[productIndex].quantity = newQuantity;
-      const display =document.querySelector( `.quantity-display[data-product-id="${productId}"]` );
+      const display = document.querySelector( `.quantity-display[data-product-id="${productId}"]` );
       display.textContent = newQuantity;
       display.classList.remove("hidden");
 
@@ -150,4 +152,20 @@ function updateCartFromInputs() {
   });
   saveCart(cart);
   console.log("Cart Updated:", cart);
+}
+
+function enableRemoveItem() {
+
+  cartItemsContainer.addEventListener("click", (e) => {
+    const button = e.target.closest('[id^="remove-"]');
+    if (!button) return;
+    const productId = Number(button.id.replace("remove-", ""));
+    let cart = getCart();
+    cart = cart.filter(item => item.id !== productId);
+
+    saveCart(cart);
+    updateCartLength();
+    getCartItems();
+
+  });
 }

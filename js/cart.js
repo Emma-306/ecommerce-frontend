@@ -200,6 +200,10 @@ function updateCartFromInputs() {
         `$${Math.round(itemPrice * newQuantity)}`;
     }
   });
+  const buttons = document.querySelectorAll(".update-toggle");
+  buttons.forEach((btn)=>{
+    if(btn.textContent === "Save") btn.textContent = "Update";
+  });
   saveCart(cart);
   updatesummary();
 }

@@ -1,6 +1,7 @@
 import { setupCartPage } from "./cart.js";
 import { renderLandingPage,showAddedCart } from "./landingPage.js";
 import { renderWishlistPage } from "./wishlist.js";
+import { setupCheckoutPage } from "./checkout.js";
 
 if(document.body.classList.contains("landing-page")){
   renderLandingPage();
@@ -15,6 +16,11 @@ if(document.body.classList.contains("wishlist")){
 
 if(document.body.classList.contains("cart")){
   setupCartPage();
+}
+
+
+if(document.body.classList.contains("checkout")){
+  setupCheckoutPage();
 }
 
 function initNav(barId, linksId, containerId) {
@@ -38,3 +44,4 @@ initNav("nav-bar-login", "nav-login", "nav-container-login");
 initNav("nav-bar-landing", "nav-landing", "nav-container-landing");
 initNav("nav-bar-wishlist", "nav-wishlist", "nav-container-wishlist");
 initNav("nav-bar-cart", "nav-cart", "nav-container-cart");
+initNav("nav-bar-checkout", "nav-checkout", "nav-container-checkout");

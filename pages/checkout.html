@@ -100,25 +100,25 @@
             <div class="flex flex-col">
                 <form action="" class="flex flex-col gap-3 w-[70%]">
                     <label for="firstName" class="text-base text-gray-400">First Name</label>
-                    <input type="text" id="firstName" name="firstName" class="bg-gray-200 h-10 rounded-sm px-3 mb-3 ]">
+                    <input type="text" id="firstName" name="firstName" class="bg-gray-200 h-10 rounded-sm px-3 mb-3 ]" required>
 
                     <label for="companyName" class="text-base text-gray-400">Company Name</label>
-                    <input type="text" id="companyName" name="companyName" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
+                    <input type="text" id="companyName" name="companyName" class="bg-gray-200 h-10 rounded-sm px-3 mb-3" required>
 
                     <label for="streetAddress" class="text-base text-gray-400">Street Address</label>
-                    <input type="text" id="streetAddress" name="streetAddress" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
+                    <input type="text" id="streetAddress" name="streetAddress" class="bg-gray-200 h-10 rounded-sm px-3 mb-3" required>
 
-                    <label for="Apartment" class="text-base text-gray-400">Apartment</label>
-                    <input type="text" id="Apartment" name="Apartment" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
+                    <label for="apartment" class="text-base text-gray-400">Apartment (optional)</label>
+                    <input type="text" id="apartment" name="apartment" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
 
                     <label for="city" class="text-base text-gray-400">Town/City</label>
-                    <input type="text" id="city" name="city" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
+                    <input type="text" id="city" name="city" class="bg-gray-200 h-10 rounded-sm px-3 mb-3" required>
 
                     <label for="phoneNumber" class="text-base text-gray-400">Phone Number</label>
-                    <input type="text" id="phoneNumber" name="phoneNumber" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
+                    <input type="text" id="phoneNumber" name="phoneNumber" class="bg-gray-200 h-10 rounded-sm px-3 mb-3" required>
 
                     <label for="email" class="text-base text-gray-400">Email</label>
-                    <input type="email" id="email" name="email" class="bg-gray-200 h-10 rounded-sm px-3 mb-3">
+                    <input type="email" id="email" name="email" class="bg-gray-200 h-10 rounded-sm px-3 mb-3" required>
 
                     <label class="flex items-center gap-3 mt-2 cursor-pointer">
                         <input 
@@ -135,41 +135,20 @@
             </div>
         </div>
         <div  class="w-full lg:w-1/2 h-full flex flex-col py-16 px-4">
-            <div class="w-3/4 bg-white">
-                <div class="flex flex-row justify-between items-center mb-6">
-                    <div class="flex flex-row gap-4 items-center">
-                        <img src="../Images/products/product-3.png" alt="product image" class="h-12 w-12 object-contain">
-                        <span class="text-base">Product Name</span>
-                    </div>
-                    <span class="text-base">$19.99</span>
-                </div>
-                <div class="flex flex-row justify-between items-center mb-6">
-                    <div class="flex flex-row gap-4 items-center">
-                        <img src="../Images/products/product-3.png" alt="product image" class="h-12 w-12 object-contain">
-                        <span class="text-base">Product Name</span>
-                    </div>
-                    <span class="text-base">$19.99</span>
-                </div>
-                <div class="flex flex-row justify-between items-center mb-6">
-                    <div class="flex flex-row gap-4 items-center">
-                        <img src="../Images/products/product-3.png" alt="product image" class="h-12 w-12 object-contain">
-                        <span class="text-base">Product Name</span>
-                    </div>
-                    <span class="text-base">$19.99</span>
-                </div>
+            <div class="w-3/4 bg-white" id="order-details">
             </div>
             <div class="bg-white w-3/4 h-32">
                 <div class="w-full flex justify-between border-b-2 border-gray-300 h-10 text-base items-center">
                     <span>Subtotal:</span>
-                    <span>$59.97</span>
+                    <span id="subtotal-sum">$59.97</span>
                 </div>
                 <div class="w-full flex justify-between border-b-2 border-gray-300 h-10 text-base items-center">
                     <span>Shipping:</span>
-                    <span>$5.99</span>
+                    <span id="shipping-fee">$5.99</span>
                 </div>
                 <div class="w-full flex justify-between h-10 text-base items-center">
                     <span>Total:</span>
-                    <span>$65.96</span>
+                    <span id="total-price">$65.96</span>
                 </div>
             </div>
             <div class="flex flex-col gap-3 mb-5">
@@ -185,11 +164,11 @@
             </div>
             <div class="w-full h-36 lg:h-20 items-start justify-start flex flex-col lg:flex-row gap-2">
                 <input type="text" placeholder="Coupon Code" class=" border border-gray-900 pl-4 pr-8 py-3 h-12 w-64 placeholder:text-sm rounded">
-                <div class="w-48 h-12 bg-theme flex items-center justify-center rounded">
+                <div class="w-48 h-12 bg-theme flex items-center justify-center rounded cursor-pointer">
                     <span class="font-medium text-sm text-white">Apply Coupon</span>
                 </div>
             </div>
-            <div class="w-40 h-12 bg-theme flex items-center justify-center rounded">
+            <div class="w-40 h-12 bg-theme flex items-center justify-center rounded cursor-pointer">
                     <span class="font-medium text-sm text-white">Place Order</span>
                 </div>
         </div>

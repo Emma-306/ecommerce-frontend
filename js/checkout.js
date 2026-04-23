@@ -2,17 +2,32 @@ import { getWishlist, getCart, saveCart } from "./data.js";
 
 
 export function setupCheckoutPage(){
-    const firstName = document.getElementById("firstName").value;
-    const companyName = document.getElementById("companyName").value;
-    const streetAddress = document.getElementById("streetAddress").value;
-    const apartment = document.getElementById("apartment").value;
-    const city = document.getElementById("city").value;
-    const phoneNumber = document.getElementById("phoneNumber").value;
-    const email = document.getElementById("email").value;
-    const saveDetails = document.getElementById("saveDetails").checked;
     updateCartLength();
     getOrderDetails();
     updatesummary();
+    loadSavedDetails();
+
+    const placeOrderBtn = document.getElementById("place-order-btn");
+
+    if (placeOrderBtn) {
+    placeOrderBtn.addEventListener("click", () => {
+        validateForm();
+    });
+    }
+    const bankRadio = document.getElementById("payment-bank");
+    const cashRadio = document.getElementById("payment-cash");
+
+    if (cashRadio) {
+        cashRadio.addEventListener("change", () => {
+            clearForm();
+        });
+    }
+
+    if (bankRadio) {
+    bankRadio.addEventListener("change", () => {
+        loadSavedDetails();
+    });
+    }
 }
 
 function updateCartLength() {
@@ -96,25 +111,67 @@ function getShippingFee(cartTotal) {
 }
 
 function validateForm(){
+
+    const firstName = document.getElementById("firstName").value;
+    const companyName = document.getElementById("companyName").value;
+    const streetAddress = document.getElementById("streetAddress").value;
+    const apartment = document.getElementById("apartment").value;
+    const city = document.getElementById("city").value;
+    const phoneNumber = document.getElementById("phoneNumber").value;
+    const email = document.getElementById("email").value;
+    const saveDetails = document.getElementById("saveDetails").checked;
+
     if (!email.includes("@")) {
         alert("Enter a valid email");
         return;
     }
+
     if (saveDetails) {
 
-    const userData = {
-        firstName,
-        companyName,
-        streetAddress,
-        apartment,
-        city,
-        phoneNumber,
-        email
-    };
+        const userData = {
+            firstName,
+            companyName,
+            streetAddress,
+            apartment,
+            city,
+            phoneNumber,
+            email
+        };
 
-    localStorage.setItem(
-        "checkoutDetails",
-        JSON.stringify(userData)
-    );
+        localStorage.setItem(
+            "checkoutDetails",
+            JSON.stringify(userData)
+        );
     }
+
+    alert("Order Placed Successfully");
+}
+
+function loadSavedDetails(){
+    const bankRadio = document.getElementById("payment-bank");
+    if (!bankRadio || !bankRadio.checked) return;
+
+    const savedDetails = localStorage.getItem("checkoutDetails");
+    if (!savedDetails) return;
+    const userData = JSON.parse(savedDetails);
+
+    document.getElementById("firstName").value = userData.firstName;
+    document.getElementById("companyName").value = userData.companyName;
+    document.getElementById("streetAddress").value = userData.streetAddress;
+    document.getElementById("apartment").value = userData.apartment;
+    document.getElementById("city").value = userData.city;
+    document.getElementById("phoneNumber").value = userData.phoneNumber;
+    document.getElementById("email").value = userData.email;
+}
+
+function clearForm(){
+
+    document.getElementById("firstName").value = "";
+    document.getElementById("companyName").value = "";
+    document.getElementById("streetAddress").value = "";
+    document.getElementById("apartment").value = "";
+    document.getElementById("city").value = "";
+    document.getElementById("phoneNumber").value = "";
+    document.getElementById("email").value = "";
+
 }

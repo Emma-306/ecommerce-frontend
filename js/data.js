@@ -421,3 +421,83 @@ export function saveCart(products){
     return false;
   }
 }
+
+export const leadership = [
+  {
+    name: "John Anderson",
+    position: "Chief Executive Officer",
+    image: "../Images/leadership/Tom-cruise.png"
+  },
+  {
+    name: "Sarah Johnson",
+    position: "Chief Operations Officer",
+    image: "../Images/leadership/emma-watson.png"
+  },
+  {
+    name: "Michael Brown",
+    position: "Chief Technology Officer",
+    image: "../Images/leadership/will-smith.png"
+  },
+  {
+    name: "David Wilson",
+    position: "Head of Marketing",
+    image: "../Images/leadership/Tom-cruise.png"
+  },
+  {
+    name: "Linda Martinez",
+    position: "Finance Manager",
+    image: "../Images/leadership/emma-watson.png"
+  },
+  {
+    name: "James Taylor",
+    position: "Human Resources Manager",
+    image: "../Images/leadership/will-smith.png"
+  },
+
+  // 🔹 Middle 3 (Your original top three)
+  {
+    name: "Tom Cruise",
+    position: "Founder & Chairman",
+    image: "../Images/leadership/Tom-cruise.png"
+  },
+  {
+    name: "Emma Watson",
+    position: "Managing Director",
+    image: "../Images/leadership/emma-watson.png"
+  },
+  {
+    name: "Will Smith",
+    position: "Product Designer",
+    image: "../Images/leadership/will-smith.png"
+  },
+  {
+    name: "Patricia Moore",
+    position: "Operations Manager",
+    image: "../Images/leadership/Tom-cruise.png"
+  },
+  {
+    name: "Robert Jackson",
+    position: "Quality Assurance Lead",
+    image: "../Images/leadership/emma-watson.png"
+  },
+  {
+    name: "Jennifer White",
+    position: "Customer Relations Manager",
+    image: "../Images/leadership/will-smith.png"
+  },
+  {
+    name: "Charles Harris",
+    position: "Business Development Manager",
+    image: "../Images/leadership/Tom-cruise.png"
+  },
+  {
+    name: "Elizabeth Clark",
+    position: "Legal Advisor",
+    image: "../Images/leadership/emma-watson.png"
+  },
+  {
+    name: "Daniel Lewis",
+    position: "IT Support Manager",
+    image: "../Images/leadership/will-smith.png"
+  }
+];

@@ -2,6 +2,7 @@ import { setupCartPage } from "./cart.js";
 import { renderLandingPage,showAddedCart } from "./landingPage.js";
 import { renderWishlistPage } from "./wishlist.js";
 import { setupCheckoutPage } from "./checkout.js";
+import { renderAboutPage } from "./about.js";
 
 if(document.body.classList.contains("landing-page")){
   renderLandingPage();
@@ -21,6 +22,10 @@ if(document.body.classList.contains("cart")){
 
 if(document.body.classList.contains("checkout")){
   setupCheckoutPage();
+}
+
+if(document.body.classList.contains("about")){
+  renderAboutPage();
 }
 
 function initNav(barId, linksId, containerId) {

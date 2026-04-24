@@ -16,8 +16,8 @@ function generateStaffPictures(){
     slice.forEach(staff =>{
         container.innerHTML += `
             <div class="w-1/3 h-full">
-                <div class="w-full h-2/3 bg-gray-300 flex items-end justify-center">
-                    <img src=${staff.image} alt="" class="h-72 w-72 object-contain">
+                <div class="w-full h-2/3 bg-gray-300 flex items-end justify-center overflow-hidden">
+                    <img src="${staff.image}" class="h-72 w-72 object-contain object-bottom">
                 </div>
                 <div class="mt-6 min-h-24 bg-white flex flex-col ">
                     <span class="font-medium text-xl md:text-3xl ">${staff.name}</span>

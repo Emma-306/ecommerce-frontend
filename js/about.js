@@ -6,7 +6,7 @@ export function renderAboutPage(){
     addSwipeSupport();
 }
 
-let currentIndex = 0;
+let currentIndex = 6;
 const itemsPerPage = 3;
 
 function generateStaffPictures(){
@@ -42,7 +42,7 @@ function navigatePictures(){
             updateActiveDot(index);
         });
     });
-    updateActiveDot(0);
+    updateActiveDot(currentIndex / itemsPerPage);
 }
 
 function updateActiveDot(activeIndex){
@@ -78,7 +78,6 @@ function nextGroup(){
     if(currentIndex >= totalItems){
         currentIndex = 0;     
     }
-
     generateStaffPictures();
     updateActiveDot(currentIndex / itemsPerPage);
 }
@@ -88,7 +87,7 @@ function prevGroup(){
     currentIndex -= itemsPerPage;
 
     if(currentIndex < 0){
-        currentIndex = totalItems = itemsPerPage;
+        currentIndex = totalItems - itemsPerPage;
     }
     generateStaffPictures();
     updateActiveDot(currentIndex/itemsPerPage)

@@ -453,8 +453,6 @@ export const leadership = [
     position: "Human Resources Manager",
     image: "../Images/leadership/will-smith.png"
   },
-
-  // 🔹 Middle 3 (Your original top three)
   {
     name: "Tom Cruise",
     position: "Founder & Chairman",

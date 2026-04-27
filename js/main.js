@@ -52,4 +52,5 @@ initNav("nav-bar-cart", "nav-cart", "nav-container-cart");
 initNav("nav-bar-checkout", "nav-checkout", "nav-container-checkout");
 initNav("nav-bar-about", "nav-about", "nav-container-about");
 initNav("nav-bar-contact", "nav-contact", "nav-container-contact");
+initNav("nav-bar-error", "nav-error", "nav-container-error");
 

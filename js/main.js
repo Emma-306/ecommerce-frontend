@@ -3,6 +3,7 @@ import { renderLandingPage,showAddedCart } from "./landingPage.js";
 import { renderWishlistPage } from "./wishlist.js";
 import { setupCheckoutPage } from "./checkout.js";
 import { renderAboutPage } from "./about.js";
+import { renderProductDetails } from "./productDetails.js";
 
 if(document.body.classList.contains("landing-page")){
   renderLandingPage();
@@ -26,6 +27,11 @@ if(document.body.classList.contains("checkout")){
 
 if(document.body.classList.contains("about")){
   renderAboutPage();
+}
+
+if(document.body.classList.contains("product-details")){
+  renderProductDetails();
+  showAddedCart();
 }
 
 function initNav(barId, linksId, containerId) {

@@ -8,10 +8,12 @@ export function renderLandingPage() {
   const flashSalesProducts = getFlashSales();
   displayImages(flashSalesImages,flashSalesProducts);
   updateIcons(flashSalesImages);
+  showProductDetails(flashSalesImages);
   
   const bestSellingProducts = getBestProducts();
   displayImages(bestSellingImages,bestSellingProducts);
   updateIcons(bestSellingImages);
+  showProductDetails(bestSellingImages)
 
   categories.forEach((category)=>{
     categoriesContainer.innerHTML += `
@@ -26,6 +28,7 @@ export function renderLandingPage() {
   const exploreProducts = getProducts();
   displayImages(exploreProductsContainer,exploreProducts);
   updateIcons(exploreProductsContainer);
+  showProductDetails(exploreProductsContainer)
 }
 
 function displayImages(images,products){
@@ -176,4 +179,22 @@ function addToCart(product) {
 
   saveCart(cart);
   console.log(cart);
+}
+
+export function showProductDetails(images) {
+  images.addEventListener("click", (e) => {
+    const icon = e.target.closest("i");
+    if (!icon) return;
+
+    const id = Number(icon.dataset.id);
+    const products = getAllProducts(); 
+    const product = products.find(p => p.id === id);
+    if (!product) return;
+
+    const type = icon.dataset.type;
+
+    if (type === "watch") {
+      window.location.href = `productDetails.html?id=${id}`;
+    }
+  });
 }

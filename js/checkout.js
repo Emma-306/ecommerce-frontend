@@ -112,14 +112,26 @@ function getShippingFee(cartTotal) {
 
 function validateForm(){
 
-    const firstName = document.getElementById("firstName").value;
-    const companyName = document.getElementById("companyName").value;
-    const streetAddress = document.getElementById("streetAddress").value;
-    const apartment = document.getElementById("apartment").value;
-    const city = document.getElementById("city").value;
-    const phoneNumber = document.getElementById("phoneNumber").value;
-    const email = document.getElementById("email").value;
+    const firstName = document.getElementById("firstName").value.trim();
+    const companyName = document.getElementById("companyName").value.trim();
+    const streetAddress = document.getElementById("streetAddress").value.trim();
+    const apartment = document.getElementById("apartment").value.trim();
+    const city = document.getElementById("city").value.trim();
+    const phoneNumber = document.getElementById("phoneNumber").value.trim();
+    const email = document.getElementById("email").value.trim();
     const saveDetails = document.getElementById("saveDetails").checked;
+
+    if (
+        firstName === "" ||
+        companyName === "" ||
+        streetAddress === "" ||
+        city === "" ||
+        phoneNumber === "" ||
+        email === ""
+    ) {
+        alert("Please fill in all required fields");
+        return;
+    }
 
     if (!email.includes("@")) {
         alert("Enter a valid email");

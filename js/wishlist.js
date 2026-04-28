@@ -1,4 +1,5 @@
 import {getWishlist,saveWishlist,getAllProducts,saveAllProducts} from "./data.js";
+import { showProductDetails } from "./landingPage.js";
 const wishListContainer = document.getElementById('display-wishlist');
 const recommendedProductsContainer = document.getElementById('display-recommended');
 
@@ -7,6 +8,7 @@ export function renderWishlistPage(){
     removeWishItem();
     updateWishlistLength();
     displayRecommendedProducts(recommendedProductsContainer);
+    showProductDetails(recommendedProductsContainer);
 }
 
 
